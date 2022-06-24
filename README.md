@@ -11,3 +11,8 @@ Front-end made in React.
 - SOLID;
 
 # Frontend
+
+- React 18
+- Advanced Hooks
+- Custom Hooks
+- Material UI
