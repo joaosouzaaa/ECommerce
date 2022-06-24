@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "KdTk4488uzVYIg2Ovt2W9nL1gyIp49akKquTj0S64S0/jWBE9FKX0ifbMuHASWIKEHn61Y1JhF6ft5KPJgE2Cg==",
+  "dgSpecHash": "bEcT7yB6WMPYYuWaY95w5+50UuvbMNOEmws9p5pB+Wn19DLGe+0L5PgzZXUH30ws7MV0vW6B0CS6EEKYXYMlUQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Igor Seven\\Documents\\MyRepositories\\Microservice\\ECommerce\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI\\ECommerce.ProductServiceAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Igor Seven\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Igor Seven\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",
     "C:\\Users\\Igor Seven\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Igor Seven\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.6\\microsoft.aspnetcore.authentication.jwtbearer.6.0.6.nupkg.sha512",
     "C:\\Users\\Igor Seven\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

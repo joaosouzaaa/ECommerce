@@ -6,6 +6,7 @@ C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\EComm
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.ProductServiceAPI.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.ProductServiceAPI.pdb
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll

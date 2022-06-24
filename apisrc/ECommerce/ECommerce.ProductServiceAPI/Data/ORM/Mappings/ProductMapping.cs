@@ -12,6 +12,9 @@ public class ProductMapping : IEntityTypeConfiguration<Product>
         builder.HasKey(p => p.Id).HasName("productId");
         builder.Property(p => p.ProductTypeId).HasColumnName("productType_Id");
 
+        builder.Property(p => p.Image).HasColumnType("varbinary")
+            .HasColumnName("image").IsRequired();
+
         builder.Property(p => p.Name).HasColumnType("varchar(50)").IsUnicode()
             .HasColumnName("name").IsRequired();
 

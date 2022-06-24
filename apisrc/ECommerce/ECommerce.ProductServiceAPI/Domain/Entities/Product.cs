@@ -1,8 +1,11 @@
 ﻿
+using System.Collections;
+
 namespace ECommerce.ProductServiceAPI.Domain.Entities;
 
 public class Product : BaseEntity
 {
+    public byte[]? Image { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
     public string? OtherDetails { get; set; }

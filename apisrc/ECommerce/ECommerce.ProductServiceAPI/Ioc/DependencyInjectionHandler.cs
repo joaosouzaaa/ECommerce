@@ -1,7 +1,7 @@
 ﻿using ECommerce.ProductServiceAPI.Data.ORM.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace ECommerce.ProductServiceAPI.Settings;
+namespace ECommerce.ProductServiceAPI.IoC;
 
 public static class DependencyInjectionHandler
 {

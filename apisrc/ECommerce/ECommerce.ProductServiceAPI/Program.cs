@@ -1,4 +1,4 @@
-using ECommerce.ProductServiceAPI.Settings;
+using ECommerce.ProductServiceAPI.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;

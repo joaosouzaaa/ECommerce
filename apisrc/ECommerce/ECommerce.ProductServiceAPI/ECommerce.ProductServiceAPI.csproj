@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.6">
       <PrivateAssets>all</PrivateAssets>
@@ -18,11 +19,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ApplicationService\" />
+    <Folder Include="ApplicationService\AutoMapperSettings\EntitiesProfile\" />
+    <Folder Include="ApplicationService\DTOs\Response\" />
+    <Folder Include="ApplicationService\DTOs\Request\" />
+    <Folder Include="ApplicationService\Services\Interfaces\" />
     <Folder Include="Data\Repository\" />
-    <Folder Include="Domain\Interface\" />
-    <Folder Include="Domain\Handlers\" />
-    <Folder Include="Settings\DependencyInjectionConfiguration\" />
+    <Folder Include="Domain\Handlers\Validation\ValidationTools\" />
+    <Folder Include="Domain\Handlers\Validation\ValidationEntities\" />
+    <Folder Include="Domain\Interface\RepositoryContract\" />
+    <Folder Include="Ioc\DependencyInjectionConfiguration\" />
   </ItemGroup>
 
 </Project>
