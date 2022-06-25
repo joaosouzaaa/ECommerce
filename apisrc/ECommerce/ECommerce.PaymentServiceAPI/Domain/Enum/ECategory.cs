@@ -1,4 +1,4 @@
-﻿namespace ECommerce.PaymentServiceAPI.Domain.Enum;
+﻿namespace ECommerce.IdentityServiceAPI.Domain.Enum;
 
 public enum ECategory : ushort
 {

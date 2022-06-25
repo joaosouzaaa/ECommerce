@@ -23,10 +23,8 @@
     <Folder Include="ApplicationService\DTOs\Response\" />
     <Folder Include="ApplicationService\DTOs\Request\" />
     <Folder Include="ApplicationService\Services\Interfaces\" />
-    <Folder Include="Data\Repository\" />
     <Folder Include="Domain\Handlers\Validation\ValidationTools\" />
     <Folder Include="Domain\Handlers\Validation\ValidationEntities\" />
-    <Folder Include="Domain\Interface\RepositoryContract\" />
     <Folder Include="Ioc\DependencyInjectionConfiguration\" />
   </ItemGroup>
 
