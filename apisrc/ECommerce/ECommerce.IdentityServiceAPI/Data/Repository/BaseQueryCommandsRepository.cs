@@ -11,11 +11,11 @@ namespace ECommerce.IdentityServiceAPI.Data.Repository
     public class BaseQueryCommandsRepository<TEntity> : IBaseQueryCommandsRepository<string, TEntity>
         where TEntity : User
     {
-        protected readonly PaymentSqlServerContext _context;
+        protected readonly IdentitySqlServerContext _context;
         protected DbSet<TEntity> _dbSet => _context.Set<TEntity>();
         private readonly IPagingService<TEntity> _pagingService;
 
-        public BaseQueryCommandsRepository(PaymentSqlServerContext context, IPagingService<TEntity> pagingService)
+        public BaseQueryCommandsRepository(IdentitySqlServerContext context, IPagingService<TEntity> pagingService)
         {
             _context = context;
             _pagingService = pagingService;
