@@ -1,4 +1,5 @@
-﻿using ECommerce.IdentityServiceAPI.Domain.Providers;
+﻿using ECommerce.IdentityServiceAPI.Domain.Enum;
+using ECommerce.IdentityServiceAPI.Domain.Providers;
 
 namespace ECommerce.IdentityServiceAPI.Data.ORM.Context
 {
@@ -16,7 +17,7 @@ namespace ECommerce.IdentityServiceAPI.Data.ORM.Context
         {
             try
             {
-                return _configurationApplication.Ambient == Domain.Enum.EAmbientTypes.Development 
+                return _configurationApplication.Ambient == EAmbientTypes.Development 
                     ? _configurationApplication.ConnectionDeveloper
                     : _configurationApplication.ConnectionProduction;
                     

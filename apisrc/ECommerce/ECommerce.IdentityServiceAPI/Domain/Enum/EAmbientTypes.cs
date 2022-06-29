@@ -2,7 +2,7 @@
 {
     public enum EAmbientTypes : int
     {
-        Development = 1,
+        Development = 0,
         Production
     }
 }

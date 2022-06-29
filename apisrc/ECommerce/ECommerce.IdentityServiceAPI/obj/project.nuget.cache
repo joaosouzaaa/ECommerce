@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "rHGDjDVM66XChqIete3a170MzXTQqyWs5laVYnR/eAuQB1GzNlqqTiKEqP1ddEcf2VxboZf8JnLT7DzmrRzp2Q==",
+  "dgSpecHash": "gUSpQOpBaOpSa1CZ6IW9lctUqJCoT3rRt8IvuLCGaNwqZ8n+PQSOhufbQWnzn4IJKnQxtIobjU2O2Jp+9LLJwA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Igor Seven\\Documents\\MyRepositories\\Microservice\\ECommerce\\apisrc\\ECommerce\\ECommerce.IdentityServiceAPI\\ECommerce.IdentityServiceAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Igor Seven\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Igor Seven\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",
     "C:\\Users\\Igor Seven\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Igor Seven\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Igor Seven\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
@@ -21,7 +23,7 @@
     "C:\\Users\\Igor Seven\\.nuget\\packages\\microsoft.aspnetcore.identity\\2.2.0\\microsoft.aspnetcore.identity.2.2.0.nupkg.sha512",
     "C:\\Users\\Igor Seven\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.6\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.6.nupkg.sha512",
     "C:\\Users\\Igor Seven\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
-    "C:\\Users\\Igor Seven\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Igor Seven\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Igor Seven\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Igor Seven\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Igor Seven\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.6\\microsoft.entityframeworkcore.6.0.6.nupkg.sha512",
