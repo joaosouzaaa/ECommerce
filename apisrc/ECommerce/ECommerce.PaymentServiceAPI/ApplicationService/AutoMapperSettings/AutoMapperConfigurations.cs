@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using System.Reflection;
 
-namespace ECommerce.IdentityServiceAPI.ApplicationService.AutoMapperSettings;
+namespace ECommerce.PaymentServiceAPI.ApplicationService.AutoMapperSettings;
 
 public static class AutoMapperConfigurations
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace ECommerce.IdentityServiceAPI.Domain.Enum;
+namespace ECommerce.PaymentServiceAPI.Domain.Enum;
 
 public enum EMessage
 {

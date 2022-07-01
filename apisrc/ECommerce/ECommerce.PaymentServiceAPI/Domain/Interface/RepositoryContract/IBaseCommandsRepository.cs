@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace ECommerce.IdentityServiceAPI.Domain.Interface.RepositoryContract;
+namespace ECommerce.PaymentServiceAPI.Domain.Interface.RepositoryContract;
 
 public interface IBaseCommandsRepository<TKey, TEntity>
     where TEntity : class

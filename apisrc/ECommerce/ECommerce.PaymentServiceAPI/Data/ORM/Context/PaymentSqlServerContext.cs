@@ -2,7 +2,7 @@
 using ECommerce.PaymentServiceAPI.Domain.Provider;
 using Microsoft.EntityFrameworkCore;
 
-namespace ECommerce.IdentityServiceAPI.Data.ORM.Context;
+namespace ECommerce.PaymentServiceAPI.Data.ORM.Context;
 
 public class PaymentSqlServerContext : BaseDbContext
 {

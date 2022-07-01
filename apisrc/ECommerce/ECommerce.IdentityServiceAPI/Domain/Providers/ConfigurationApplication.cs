@@ -1,6 +1,6 @@
-﻿using ECommerce.IdentityServiceAPI.Domain.Enum;
+﻿using ECommerce.ShoppingCartServiceAPI.Domain.Enum;
 
-namespace ECommerce.IdentityServiceAPI.Domain.Providers;
+namespace ECommerce.ShoppingCartServiceAPI.Domain.Providers;
 
 public class ConfigurationApplication
 {

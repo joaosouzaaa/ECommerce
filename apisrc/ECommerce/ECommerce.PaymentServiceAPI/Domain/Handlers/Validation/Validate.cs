@@ -1,9 +1,9 @@
-﻿using ECommerce.IdentityServiceAPI.Domain.Extensions;
-using ECommerce.IdentityServiceAPI.Domain.Interface;
+﻿using ECommerce.PaymentServiceAPI.Domain.Extensions;
+using ECommerce.PaymentServiceAPI.Domain.Interface;
 using FluentValidation;
 using FluentValidation.Results;
 
-namespace ECommerce.IdentityServiceAPI.Domain.Handlers.Validation;
+namespace ECommerce.PaymentServiceAPI.Domain.Handlers.Validation;
 
 public class Validate<TEntity> : AbstractValidator<TEntity>, IValidate<TEntity> where TEntity : class
 {

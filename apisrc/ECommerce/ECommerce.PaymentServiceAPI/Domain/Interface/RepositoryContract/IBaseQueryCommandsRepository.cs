@@ -1,7 +1,7 @@
-﻿using ECommerce.IdentityServiceAPI.Domain.Handlers.Pagination;
+﻿using ECommerce.PaymentServiceAPI.Domain.Handlers.Pagination;
 using System.Linq.Expressions;
 
-namespace ECommerce.IdentityServiceAPI.Domain.Interface.RepositoryContract;
+namespace ECommerce.PaymentServiceAPI.Domain.Interface.RepositoryContract;
 
 public interface IBaseQueryCommandsRepository<TKey, TEntity>
     where TEntity : class

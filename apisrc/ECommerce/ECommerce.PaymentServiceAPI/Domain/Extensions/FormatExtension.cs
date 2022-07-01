@@ -1,4 +1,4 @@
-﻿namespace ECommerce.IdentityServiceAPI.Domain.Extensions;
+﻿namespace ECommerce.PaymentServiceAPI.Domain.Extensions;
 
 public static class FormatExtension
 {

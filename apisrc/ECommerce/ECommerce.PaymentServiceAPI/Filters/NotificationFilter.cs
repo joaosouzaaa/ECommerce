@@ -1,8 +1,8 @@
-﻿using ECommerce.IdentityServiceAPI.Domain.Interface;
+﻿using ECommerce.PaymentServiceAPI.Domain.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace ECommerce.IdentityServiceAPI.Filters
+namespace ECommerce.PaymentServiceAPI.Filters
 {
     public class NotificationFilter : ActionFilterAttribute
     {

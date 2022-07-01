@@ -1,4 +1,4 @@
-﻿namespace ECommerce.IdentityServiceAPI.Domain.Handlers.Notification;
+﻿namespace ECommerce.PaymentServiceAPI.Domain.Handlers.Notification;
 
 public class DomainNotification
 {

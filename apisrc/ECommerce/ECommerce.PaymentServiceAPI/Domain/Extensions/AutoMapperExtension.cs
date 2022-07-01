@@ -1,6 +1,6 @@
-﻿using ECommerce.IdentityServiceAPI.ApplicationService.AutoMapperSettings;
+﻿using ECommerce.PaymentServiceAPI.ApplicationService.AutoMapperSettings;
 
-namespace ECommerce.IdentityServiceAPI.Domain.Extensions;
+namespace ECommerce.PaymentServiceAPI.Domain.Extensions;
 
 public static class AutoMapperExtension
 {

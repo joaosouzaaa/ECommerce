@@ -1,12 +1,12 @@
-﻿using ECommerce.IdentityServiceAPI.Data.ORM.Context;
-using ECommerce.IdentityServiceAPI.Domain.Entities;
-using ECommerce.IdentityServiceAPI.Domain.Handlers.Pagination;
-using ECommerce.IdentityServiceAPI.Domain.Interface;
-using ECommerce.IdentityServiceAPI.Domain.Interface.RepositoryContract;
+﻿using ECommerce.ShoppingCartServiceAPI.Data.ORM.Context;
+using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
+using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Pagination;
+using ECommerce.ShoppingCartServiceAPI.Domain.Interface;
+using ECommerce.ShoppingCartServiceAPI.Domain.Interface.RepositoryContract;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace ECommerce.IdentityServiceAPI.Data.Repository
+namespace ECommerce.ShoppingCartServiceAPI.Data.Repository
 {
     public class BaseQueryCommandsRepository<TEntity> : IBaseQueryCommandsRepository<string, TEntity>
         where TEntity : User

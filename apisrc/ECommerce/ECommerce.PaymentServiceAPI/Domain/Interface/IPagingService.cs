@@ -1,6 +1,6 @@
-﻿using ECommerce.IdentityServiceAPI.Domain.Handlers.Pagination;
+﻿using ECommerce.PaymentServiceAPI.Domain.Handlers.Pagination;
 
-namespace ECommerce.IdentityServiceAPI.Domain.Interface;
+namespace ECommerce.PaymentServiceAPI.Domain.Interface;
 
 public interface IPagingService<TEntity> where TEntity : class
 {

@@ -1,6 +1,6 @@
-﻿using ECommerce.IdentityServiceAPI.Domain.Providers;
+﻿using ECommerce.ShoppingCartServiceAPI.Domain.Providers;
 
-namespace ECommerce.IdentityServiceAPI.IoC;
+namespace ECommerce.ShoppingCartServiceAPI.IoC;
 
 public static class DependencyInjectionHandler
 {

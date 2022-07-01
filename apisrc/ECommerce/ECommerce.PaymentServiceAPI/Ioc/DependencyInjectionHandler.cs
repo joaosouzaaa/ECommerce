@@ -1,7 +1,7 @@
-﻿using ECommerce.IdentityServiceAPI.Data.ORM.Context;
+﻿using ECommerce.PaymentServiceAPI.Data.ORM.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace ECommerce.IdentityServiceAPI.IoC;
+namespace ECommerce.PaymentServiceAPI.IoC;
 
 public static class DependencyInjectionHandler
 {

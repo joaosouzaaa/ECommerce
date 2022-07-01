@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace ECommerce.IdentityServiceAPI.Domain.Entities
+namespace ECommerce.ShoppingCartServiceAPI.Domain.Entities
 {
     public class Role : IdentityRole
     {

@@ -1,7 +1,7 @@
-﻿using ECommerce.IdentityServiceAPI.Domain.Enum;
+﻿using ECommerce.PaymentServiceAPI.Domain.Enum;
 using System.ComponentModel;
 
-namespace ECommerce.IdentityServiceAPI.Domain.Extensions;
+namespace ECommerce.PaymentServiceAPI.Domain.Extensions;
 
 public static class MessageExtension
 {

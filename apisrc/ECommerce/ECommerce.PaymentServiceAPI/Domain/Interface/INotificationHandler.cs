@@ -1,6 +1,6 @@
-﻿using ECommerce.IdentityServiceAPI.Domain.Handlers.Notification;
+﻿using ECommerce.PaymentServiceAPI.Domain.Handlers.Notification;
 
-namespace ECommerce.IdentityServiceAPI.Domain.Interface
+namespace ECommerce.PaymentServiceAPI.Domain.Interface
 {
     public interface INotificationHandler
     {

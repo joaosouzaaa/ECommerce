@@ -1,4 +1,4 @@
-﻿namespace ECommerce.IdentityServiceAPI.Domain.Handlers.Pagination;
+﻿namespace ECommerce.PaymentServiceAPI.Domain.Handlers.Pagination;
 
 public class PageList<TEntity>
 {

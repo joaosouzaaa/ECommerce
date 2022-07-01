@@ -1,7 +1,7 @@
-﻿using ECommerce.IdentityServiceAPI.Domain.Enum;
-using ECommerce.IdentityServiceAPI.Domain.Providers;
+﻿using ECommerce.ShoppingCartServiceAPI.Domain.Enum;
+using ECommerce.ShoppingCartServiceAPI.Domain.Providers;
 
-namespace ECommerce.IdentityServiceAPI.Data.ORM.Context
+namespace ECommerce.ShoppingCartServiceAPI.Data.ORM.Context
 {
     public class DataConnectionFactory
     {

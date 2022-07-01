@@ -1,10 +1,10 @@
-﻿using ECommerce.IdentityServiceAPI.Domain.Entities;
-using ECommerce.IdentityServiceAPI.Domain.Enum;
-using ECommerce.IdentityServiceAPI.Domain.Providers;
+﻿using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
+using ECommerce.ShoppingCartServiceAPI.Domain.Enum;
+using ECommerce.ShoppingCartServiceAPI.Domain.Providers;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace ECommerce.IdentityServiceAPI.Data.ORM.Context
+namespace ECommerce.ShoppingCartServiceAPI.Data.ORM.Context
 {
     public class BaseDbContext : IdentityDbContext<User>
     {

@@ -1,12 +1,12 @@
-﻿using ECommerce.IdentityServiceAPI.Data.ORM.Context;
-using ECommerce.IdentityServiceAPI.Domain.Entities;
-using ECommerce.IdentityServiceAPI.Domain.Handlers.Pagination;
-using ECommerce.IdentityServiceAPI.Domain.Interface;
-using ECommerce.IdentityServiceAPI.Domain.Interface.RepositoryContract;
+﻿using ECommerce.PaymentServiceAPI.Data.ORM.Context;
+using ECommerce.PaymentServiceAPI.Domain.Entities;
+using ECommerce.PaymentServiceAPI.Domain.Handlers.Pagination;
+using ECommerce.PaymentServiceAPI.Domain.Interface;
+using ECommerce.PaymentServiceAPI.Domain.Interface.RepositoryContract;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace ECommerce.IdentityServiceAPI.Data.Repository
+namespace ECommerce.PaymentServiceAPI.Data.Repository
 {
     public class BaseQueryCommandsRepository<TEntity> : BaseCommandsRepository<TEntity>, IBaseQueryCommandsRepository<int, TEntity>
         where TEntity : BaseEntity

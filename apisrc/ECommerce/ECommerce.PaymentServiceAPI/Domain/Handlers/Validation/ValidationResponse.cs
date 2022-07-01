@@ -1,4 +1,4 @@
-﻿namespace ECommerce.IdentityServiceAPI.Domain.Handlers.Validation;
+﻿namespace ECommerce.PaymentServiceAPI.Domain.Handlers.Validation;
 
 public class ValidationResponse
 {

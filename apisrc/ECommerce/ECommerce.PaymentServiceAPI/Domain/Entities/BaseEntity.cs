@@ -1,4 +1,4 @@
-﻿namespace ECommerce.IdentityServiceAPI.Domain.Entities;
+﻿namespace ECommerce.PaymentServiceAPI.Domain.Entities;
 
 public class BaseEntity
 {

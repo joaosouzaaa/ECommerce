@@ -1,9 +1,9 @@
-﻿using ECommerce.IdentityServiceAPI.Data.ORM.Context;
-using ECommerce.IdentityServiceAPI.Domain.Interface.RepositoryContract;
+﻿using ECommerce.PaymentServiceAPI.Data.ORM.Context;
+using ECommerce.PaymentServiceAPI.Domain.Interface.RepositoryContract;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace ECommerce.IdentityServiceAPI.Data.Repository
+namespace ECommerce.PaymentServiceAPI.Data.Repository
 {
     public class BaseCommandsRepository<TEntity> : IBaseCommandsRepository<int, TEntity>
         where TEntity : class

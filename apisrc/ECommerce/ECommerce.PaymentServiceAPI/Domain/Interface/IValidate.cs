@@ -1,6 +1,6 @@
-﻿using ECommerce.IdentityServiceAPI.Domain.Handlers.Validation;
+﻿using ECommerce.PaymentServiceAPI.Domain.Handlers.Validation;
 
-namespace ECommerce.IdentityServiceAPI.Domain.Interface;
+namespace ECommerce.PaymentServiceAPI.Domain.Interface;
 
 public interface IValidate<TEntity> where TEntity : class
 {
