@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.IdentityServiceAP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShoppingCart", "ShoppingCart", "{E2FD0CC6-02D6-41BB-8DED-73E31C644D8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.ShoppingCartServiceAPI", "ECommerce.ShoppingCartServiceAPI\ECommerce.ShoppingCartServiceAPI.csproj", "{0F0C57A8-6CDA-47AB-A8A8-9149745C01ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.ShoppingCartServiceAPI", "ECommerce.ShoppingCartServiceAPI\ECommerce.ShoppingCartServiceAPI.csproj", "{0F0C57A8-6CDA-47AB-A8A8-9149745C01ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
