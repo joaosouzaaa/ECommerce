@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\apisrc",
+    "\\apisrc\\ECommerce",
+    "\\apisrc\\ECommerce\\ECommerce.PaymentServiceAPI",
+    "\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI",
+    "\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI\\Domain",
+    "\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI\\Domain\\Handlers",
+    "\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI\\Domain\\Handlers\\Validation"
+  ],
+  "SelectedNode": "\\apisrc\\ECommerce\\ECommerce.sln",
+  "PreviewInSolutionExplorer": false
+}
