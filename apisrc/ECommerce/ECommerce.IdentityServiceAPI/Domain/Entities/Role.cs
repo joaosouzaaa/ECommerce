@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace ECommerce.ShoppingCartServiceAPI.Domain.Entities
+namespace ECommerce.ShoppingCartServiceAPI.Domain.Entities;
+
+public class Role : IdentityRole
 {
-    public class Role : IdentityRole
-    {
-        public List<User> Users { get; set; }
-    }
+    public List<User> Users { get; set; }
 }

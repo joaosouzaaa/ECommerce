@@ -1,4 +1,5 @@
-﻿using ECommerce.ShoppingCartServiceAPI.Domain.Providers;
+﻿using ECommerce.IdentityServiceAPI.Ioc.DIServices;
+using ECommerce.ShoppingCartServiceAPI.Domain.Providers;
 
 namespace ECommerce.ShoppingCartServiceAPI.IoC;
 
@@ -8,5 +9,7 @@ public static class DependencyInjectionHandler
     {
 
         services.AddSingleton(configuration.GetSection("ConnectionStrings").Get<ConfigurationApplication>());
+
+        services.AddIdentityDIConfiguration();
     }
 }

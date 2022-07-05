@@ -65,3 +65,8 @@ C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\EComm
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.IdentityServiceAPI\obj\Debug\net6.0\ECommerce.IdentityServiceAPI.pdb
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.IdentityServiceAPI\obj\Debug\net6.0\ECommerce.IdentityServiceAPI.genruntimeconfig.cache
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.IdentityServiceAPI\obj\Debug\net6.0\ref\ECommerce.IdentityServiceAPI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.IdentityServiceAPI\bin\Debug\net6.0\IdentityModel.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.IdentityServiceAPI\bin\Debug\net6.0\IdentityServer4.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.IdentityServiceAPI\bin\Debug\net6.0\IdentityServer4.Storage.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.IdentityServiceAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.IdentityServiceAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
