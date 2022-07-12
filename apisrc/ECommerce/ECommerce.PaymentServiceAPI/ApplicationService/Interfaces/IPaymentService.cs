@@ -8,5 +8,6 @@ namespace ECommerce.PaymentServiceAPI.ApplicationService.Interfaces
     {
         Task<Session> CreateSessionAsync(ProductsSaveRequest products);
         Task<Product> CreateProductAsync(ProductSaveRequest product);
+        Task<StripeList<Product>> GetAllProductsAsync();
     }
 }

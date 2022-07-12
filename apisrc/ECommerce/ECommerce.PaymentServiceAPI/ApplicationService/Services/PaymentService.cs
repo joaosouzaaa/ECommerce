@@ -9,11 +9,13 @@ namespace ECommerce.PaymentServiceAPI.ApplicationService.Services
     {
         public SessionService SessionService { get; set; }
         public ProductService ProductService { get; set; }
+        public PriceService PriceService { get; set; }
 
         public PaymentService()
         {
             ProductService = new ProductService();
             SessionService = new SessionService();
+            PriceService = new PriceService();
         }
 
         public async Task<Session> CreateSessionAsync(ProductsSaveRequest products)
@@ -22,12 +24,18 @@ namespace ECommerce.PaymentServiceAPI.ApplicationService.Services
 
             foreach (var productId in products.ProductsIds)
             {
+                var product = await ProductService.GetAsync(productId);
+                var priceData = await PriceService.GetAsync(product.DefaultPriceId);
+
                 var sessionLineItem = new SessionLineItemOptions
                 {
                     PriceData = new SessionLineItemPriceDataOptions
                     {
+                        UnitAmountDecimal = priceData.UnitAmountDecimal,
                         Product = productId,
-                    }
+                        Currency = priceData.Currency,
+                    },
+                    Quantity = 1
                 };
 
                 productsList.Add(sessionLineItem);
@@ -37,8 +45,8 @@ namespace ECommerce.PaymentServiceAPI.ApplicationService.Services
             {
                 LineItems = productsList,
                 Mode = "payment",
-                SuccessUrl = "localhost:3000/sucess",
-                CancelUrl = "localhost:3000/fail"
+                SuccessUrl = "https://localhost:3000/sucess",
+                CancelUrl = "https://localhost:3000/fail"
             };
 
             return await SessionService.CreateAsync(options);
@@ -54,11 +62,14 @@ namespace ECommerce.PaymentServiceAPI.ApplicationService.Services
                 DefaultPriceData = new ProductDefaultPriceDataOptions
                 {
                     UnitAmountDecimal = product.Price,
-                    Currency = "brl"
+                    Currency = "brl",
                 }
             };
 
             return await ProductService.CreateAsync(options);
         }
+
+        public async Task<StripeList<Product>> GetAllProductsAsync() =>
+            await ProductService.ListAsync();
     }
 }

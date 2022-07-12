@@ -31,5 +31,8 @@ namespace ECommerce.PaymentServiceAPI.Controllers
 
             return new StatusCodeResult(303);
         }
+
+        [HttpGet("get-all-products")]
+        public async Task<StripeList<Product>> GetAllProductsAsync() => await _paymentService.GetAllProductsAsync();
     }
 }
