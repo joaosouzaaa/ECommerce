@@ -1,0 +1,88 @@
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\appsettings.json
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.ProductServiceAPI.exe
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.ProductServiceAPI.deps.json
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.ProductServiceAPI.runtimeconfig.json
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.ProductServiceAPI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.ProductServiceAPI.pdb
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.csproj.AssemblyReference.cache
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.AssemblyInfoInputs.cache
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.AssemblyInfo.cs
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.csproj.CoreCompileInputs.cache
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\scopedcss\bundle\ECommerce.ProductServiceAPI.styles.css
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.csproj.CopyComplete
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\refint\ECommerce.ProductServiceAPI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.pdb
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.genruntimeconfig.cache
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ref\ECommerce.ProductServiceAPI.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\appsettings.json
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.ProductServiceAPI.exe
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.ProductServiceAPI.deps.json
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.ProductServiceAPI.runtimeconfig.json
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.ProductServiceAPI.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.ProductServiceAPI.pdb
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.csproj.AssemblyReference.cache
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.AssemblyInfoInputs.cache
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.AssemblyInfo.cs
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.csproj.CoreCompileInputs.cache
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\scopedcss\bundle\ECommerce.ProductServiceAPI.styles.css
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.csproj.CopyComplete
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\refint\ECommerce.ProductServiceAPI.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.pdb
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.genruntimeconfig.cache
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ref\ECommerce.ProductServiceAPI.dll

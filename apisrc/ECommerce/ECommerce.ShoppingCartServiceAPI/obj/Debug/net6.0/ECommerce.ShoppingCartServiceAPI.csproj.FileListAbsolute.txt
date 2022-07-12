@@ -1,0 +1,134 @@
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\appsettings.json
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.exe
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.deps.json
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.runtimeconfig.json
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.pdb
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.csproj.AssemblyReference.cache
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.AssemblyInfoInputs.cache
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.AssemblyInfo.cs
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.csproj.CoreCompileInputs.cache
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\scopedcss\bundle\ECommerce.ShoppingCartServiceAPI.styles.css
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.csproj.CopyComplete
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\refint\ECommerce.ShoppingCartServiceAPI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.pdb
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.genruntimeconfig.cache
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ref\ECommerce.ShoppingCartServiceAPI.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\RabbitMQ.Client.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.MessageBus.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.MessageBus.pdb
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\appsettings.json
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.exe
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.deps.json
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.runtimeconfig.json
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.pdb
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\RabbitMQ.Client.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.MessageBus.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\bin\Debug\net6.0\ECommerce.MessageBus.pdb
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.csproj.AssemblyReference.cache
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.AssemblyInfoInputs.cache
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.AssemblyInfo.cs
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.csproj.CoreCompileInputs.cache
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\scopedcss\bundle\ECommerce.ShoppingCartServiceAPI.styles.css
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.csproj.CopyComplete
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\refint\ECommerce.ShoppingCartServiceAPI.dll
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.pdb
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.genruntimeconfig.cache
+C:\Users\Joao\Source\Repos\ECommerce\apisrc\ECommerce\ECommerce.ShoppingCartServiceAPI\obj\Debug\net6.0\ref\ECommerce.ShoppingCartServiceAPI.dll
