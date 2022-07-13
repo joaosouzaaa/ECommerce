@@ -1,6 +1,6 @@
 ﻿namespace ECommerce.ShoppingCartServiceAPI.Domain.Entities
 {
-    public class Product
+    public class Product : BaseEntity
     {
         public byte[]? Image { get; set; }
         public string Name { get; set; }

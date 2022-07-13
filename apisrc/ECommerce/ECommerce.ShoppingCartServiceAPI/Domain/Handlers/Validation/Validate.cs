@@ -9,9 +9,9 @@ public class Validate<TEntity> : AbstractValidator<TEntity>, IValidate<TEntity> 
 {
     private ValidationResult _validationResult { get; set; }
 
-    private void CreateResult(TEntity entity) => this._validationResult = base.Validate(entity);
-    private async Task CreateResultAsync(TEntity entity) => this._validationResult = await base.ValidateAsync(entity);
-    private Dictionary<string, string> GetErrors() => this._validationResult.Errors.ToDictionary();
+    private void CreateResult(TEntity entity) => _validationResult = base.Validate(entity);
+    private async Task CreateResultAsync(TEntity entity) => _validationResult = await base.ValidateAsync(entity);
+    private Dictionary<string, string> GetErrors() => _validationResult.Errors.ToDictionary();
 
 
 
