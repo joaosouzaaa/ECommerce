@@ -1,15 +1,18 @@
-var builder = WebApplication.CreateBuilder(args);
+using ECommerce.PaymentServiceAPI.IoC;
+using Stripe;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
+ConfigurationManager configuration = builder.Configuration;
+
+StripeConfiguration.ApiKey = configuration["Stripe:SecretKey"];
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDIHandler(configuration);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
