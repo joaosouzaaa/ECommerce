@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joao\\Source\\Repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.PaymentServiceAPI\\ECommerce.PaymentServiceAPI.csproj": {}
+    "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.PaymentServiceAPI\\ECommerce.PaymentServiceAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joao\\Source\\Repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.PaymentServiceAPI\\ECommerce.PaymentServiceAPI.csproj": {
+    "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.PaymentServiceAPI\\ECommerce.PaymentServiceAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joao\\Source\\Repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.PaymentServiceAPI\\ECommerce.PaymentServiceAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.PaymentServiceAPI\\ECommerce.PaymentServiceAPI.csproj",
         "projectName": "ECommerce.PaymentServiceAPI",
-        "projectPath": "C:\\Users\\Joao\\Source\\Repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.PaymentServiceAPI\\ECommerce.PaymentServiceAPI.csproj",
+        "projectPath": "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.PaymentServiceAPI\\ECommerce.PaymentServiceAPI.csproj",
         "packagesPath": "C:\\Users\\Joao\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joao\\Source\\Repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.PaymentServiceAPI\\obj\\",
+        "outputPath": "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.PaymentServiceAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

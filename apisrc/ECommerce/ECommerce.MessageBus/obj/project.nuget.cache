@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GHmaXjnfA5HX5+3quDRtEmXGayIVH3ebF4sWNrGewdYk/B6gD8b4K5VX70YHH/AuFgPXJ3lIF2t1v2vd1RGF/w==",
+  "dgSpecHash": "7U6a+W1oTa2HQj33KROHIYIqtH1GjC6o68/Z2P8+2Pegk479AzRDPtcxr3Z2xVXlKYiafjeNJr/e1FcQnJz6ig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Joao\\Source\\Repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.MessageBus\\ECommerce.MessageBus.csproj",
+  "projectFilePath": "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.MessageBus\\ECommerce.MessageBus.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

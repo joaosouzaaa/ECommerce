@@ -10,12 +10,16 @@ namespace ECommerce.PaymentServiceAPI.ApplicationService.Services
         public SessionService SessionService { get; set; }
         public ProductService ProductService { get; set; }
         public PriceService PriceService { get; set; }
+        public PaymentMethodService PaymentMethodService { get; set; }
+        public PaymentIntentService PaymentIntentService { get; set; }
 
         public PaymentService()
         {
             ProductService = new ProductService();
             SessionService = new SessionService();
             PriceService = new PriceService();
+            PaymentMethodService = new PaymentMethodService();
+            PaymentIntentService = new PaymentIntentService();
         }
 
         public async Task<Session> CreateSessionAsync(ProductsSaveRequest products)
@@ -43,13 +47,32 @@ namespace ECommerce.PaymentServiceAPI.ApplicationService.Services
 
             var options = new SessionCreateOptions
             {
+                PaymentMethodTypes = new List<string>() { "card" },
                 LineItems = productsList,
                 Mode = "payment",
-                SuccessUrl = "https://localhost:3000/sucess",
-                CancelUrl = "https://localhost:3000/fail"
+                SuccessUrl = "https://google.com",
+                CancelUrl = "https://walmart.com"
             };
 
-            return await SessionService.CreateAsync(options);
+            var result = await SessionService.CreateAsync(options);
+            return result;
+        }
+
+        public async Task<PaymentMethod> CreatePaymentMethod()
+        {
+            var options = new PaymentMethodCreateOptions
+            {
+                Type = "card",
+                Card = new PaymentMethodCardOptions
+                {
+                    Number = "4242424242424242",
+                    ExpMonth = 7,
+                    ExpYear = 2023,
+                    Cvc = "314",
+                }
+            };
+            
+            return await PaymentMethodService.CreateAsync(options);
         }
 
         public async Task<Product> CreateProductAsync(ProductSaveRequest product)

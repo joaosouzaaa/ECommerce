@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gfxSp15u9wJMmZAk4ZaNIVYZ1bd/t0mTSfDv1tWDgnuLTkRfKqIVfqpuClWK4BOzGa08I6hnou4FexxXR+EH+A==",
+  "dgSpecHash": "MFDE/y4gxKeM0M0jwoqAC42aizmhybIjZwFJkYXbHo1HDiILVHKz8RE51mbN095JepjL9gE9YZgjLEJRuOB87A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Joao\\Source\\Repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.IdentityServiceAPI\\ECommerce.IdentityServiceAPI.csproj",
+  "projectFilePath": "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.IdentityServiceAPI\\ECommerce.IdentityServiceAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Joao\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Joao\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",

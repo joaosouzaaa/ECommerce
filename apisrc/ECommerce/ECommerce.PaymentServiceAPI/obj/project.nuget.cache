@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jWVEYncTr4Dss+o0CbaUxjHTZjrwVbBFFUdtZM7Qf1MzfcwbCvx2BV2DDO9S4YZQaio8h9w8T6uG9fXqseUkzw==",
+  "dgSpecHash": "oA4ycWCgIxWXc6FnZXfsFz9AFs2QfVbThc0bLJW1ymlNDfecvbgP+3VKKuPSs0+t7/MveLcrZHsP3MOZZRX6lw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Joao\\Source\\Repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.PaymentServiceAPI\\ECommerce.PaymentServiceAPI.csproj",
+  "projectFilePath": "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.PaymentServiceAPI\\ECommerce.PaymentServiceAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Joao\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Joao\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",

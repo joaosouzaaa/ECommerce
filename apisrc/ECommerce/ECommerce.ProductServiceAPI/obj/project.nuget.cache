@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cJZPfQO4iyCUcnLQ6BXKoGe0dwpYhZXRAgBit+AJU0w5iqhom4E3/6oTjM3k6XHE4RnqjpnvSuJqTvAMX9+clA==",
+  "dgSpecHash": "BZxRsMmukDZOnAGoVU2FBZhvNNydsO0LjbcIjIro+FQPpKPimaLT3FY4Mt7+cQeyJXy3cSs3BofXhT51VbIWDQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Joao\\Source\\Repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI\\ECommerce.ProductServiceAPI.csproj",
+  "projectFilePath": "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI\\ECommerce.ProductServiceAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Joao\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Joao\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",
