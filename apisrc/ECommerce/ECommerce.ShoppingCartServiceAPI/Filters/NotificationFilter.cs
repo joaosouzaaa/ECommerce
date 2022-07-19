@@ -2,24 +2,23 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace ECommerce.ShoppingCartServiceAPI.Filters
+namespace ECommerce.ShoppingCartServiceAPI.Filters;
+
+public class NotificationFilter : ActionFilterAttribute
 {
-    public class NotificationFilter : ActionFilterAttribute
+    private readonly INotificationHandler _notification;
+
+    public NotificationFilter(INotificationHandler notification)
     {
-        private readonly INotificationHandler _notification;
+        _notification = notification;
+    }
 
-        public NotificationFilter(INotificationHandler notification)
-        {
-            _notification = notification;
-        }
+    public override void OnActionExecuted(ActionExecutedContext context)
+    {
 
-        public override void OnActionExecuted(ActionExecutedContext context)
-        {
+        if (_notification.HasNotification())
+            context.Result = new BadRequestObjectResult(_notification.GetNotifications());
 
-            if (_notification.HasNotification())
-                context.Result = new BadRequestObjectResult(_notification.GetNotifications());
-
-            base.OnActionExecuted(context);
-        }
+        base.OnActionExecuted(context);
     }
 }

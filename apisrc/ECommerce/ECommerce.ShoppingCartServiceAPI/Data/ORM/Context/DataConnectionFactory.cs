@@ -1,30 +1,29 @@
 ﻿using ECommerce.ShoppingCartServiceAPI.Domain.Enum;
 using ECommerce.ShoppingCartServiceAPI.Domain.Provider;
 
-namespace ECommerce.ShoppingCartServiceAPI.Data.ORM.Context
+namespace ECommerce.ShoppingCartServiceAPI.Data.ORM.Context;
+
+public class DataConnectionFactory
 {
-    public class DataConnectionFactory
+    private readonly ConfigurationApplication _configurationApplication;
+
+    public DataConnectionFactory(ConfigurationApplication configurationApplication)
     {
-        private readonly ConfigurationApplication _configurationApplication;
+        _configurationApplication = configurationApplication;
+    }
 
-        public DataConnectionFactory(ConfigurationApplication configurationApplication)
+
+    public string GetConnection()
+    {
+        try
         {
-            _configurationApplication = configurationApplication;
+            return _configurationApplication.Ambient == EAmbientTypes.Development
+                ? _configurationApplication.ConnectionDeveloper
+                : _configurationApplication.ConnectionProduction;
         }
-
-
-        public string GetConnection()
+        catch (Exception exception)
         {
-            try
-            {
-                return _configurationApplication.Ambient == EAmbientTypes.Development
-                    ? _configurationApplication.ConnectionDeveloper
-                    : _configurationApplication.ConnectionProduction;
-            }
-            catch (Exception exception)
-            {
-                throw exception;
-            }
+            throw exception;
         }
     }
 }

@@ -3064,11 +3064,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Joao\\Source\\Repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.IdentityServiceAPI\\ECommerce.IdentityServiceAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.IdentityServiceAPI\\ECommerce.IdentityServiceAPI.csproj",
       "projectName": "ECommerce.IdentityServiceAPI",
-      "projectPath": "C:\\Users\\Joao\\Source\\Repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.IdentityServiceAPI\\ECommerce.IdentityServiceAPI.csproj",
+      "projectPath": "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.IdentityServiceAPI\\ECommerce.IdentityServiceAPI.csproj",
       "packagesPath": "C:\\Users\\Joao\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Joao\\Source\\Repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.IdentityServiceAPI\\obj\\",
+      "outputPath": "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.IdentityServiceAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3159,5 +3159,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.IdentityServiceAPI\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
