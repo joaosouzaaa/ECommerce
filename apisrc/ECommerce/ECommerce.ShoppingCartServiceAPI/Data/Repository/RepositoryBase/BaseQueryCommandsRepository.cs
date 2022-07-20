@@ -6,14 +6,14 @@ using ECommerce.ShoppingCartServiceAPI.Domain.Interface.RepositoryContract;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace ECommerce.ShoppingCartServiceAPI.Data.Repository
+namespace ECommerce.ShoppingCartServiceAPI.Data.Repository.RepositoryBase
 {
     public class BaseQueryCommandsRepository<TEntity> : BaseCommandsRepository<TEntity>, IBaseQueryCommandsRepository<int, TEntity>
         where TEntity : BaseEntity
     {
         private readonly IPagingService<TEntity> _pagingService;
 
-        public BaseQueryCommandsRepository(ShoppingCartSqlServerContext context, IPagingService<TEntity> pagingService) : base(context)
+        public BaseQueryCommandsRepository(ShoppingCartContext context, IPagingService<TEntity> pagingService) : base(context)
         {
             _pagingService = pagingService;
         }
@@ -28,7 +28,7 @@ namespace ECommerce.ShoppingCartServiceAPI.Data.Repository
             return _pagingService.CreatePaginationAsync(query, pageParams.PageNumber, pageParams.PageSize);
         }
 
-        protected IQueryable<TEntity> IncludeMutiple(IQueryable<TEntity> query, bool asNoTracking, params Expression<Func<TEntity, Object>>[] includes)
+        protected IQueryable<TEntity> IncludeMutiple(IQueryable<TEntity> query, bool asNoTracking, params Expression<Func<TEntity, object>>[] includes)
         {
             query = includes.Aggregate(query, (current, include) => current.Include(include));
 

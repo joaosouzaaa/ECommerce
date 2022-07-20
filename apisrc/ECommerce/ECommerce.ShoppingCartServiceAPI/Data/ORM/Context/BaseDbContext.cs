@@ -1,6 +1,7 @@
 ﻿using ECommerce.ShoppingCartServiceAPI.Domain.Enum;
 using ECommerce.ShoppingCartServiceAPI.Domain.Provider;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace ECommerce.ShoppingCartServiceAPI.Data.ORM.Context;
 
@@ -9,7 +10,7 @@ public class BaseDbContext : DbContext
     private readonly ConfigurationApplication _configurationApplication;
 
     public BaseDbContext(ConfigurationApplication configurationApplication)
-        : base(new DbContextOptions<BaseDbContext>())
+                         : base(new DbContextOptions<BaseDbContext>())
     {
         _configurationApplication = configurationApplication;
     }

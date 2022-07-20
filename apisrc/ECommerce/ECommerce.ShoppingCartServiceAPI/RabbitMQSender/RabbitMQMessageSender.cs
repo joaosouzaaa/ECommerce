@@ -36,9 +36,6 @@ public class RabbitMQMessageSender : IRabbitMQMessageSender
 
         channel.BasicPublish(exchange: "", routingKey: topicName, basicProperties: null,
             body: body);
-
-
-        throw new NotImplementedException();
     }
 
     private byte[] GetMessageAsByteArray(BaseMessage message)

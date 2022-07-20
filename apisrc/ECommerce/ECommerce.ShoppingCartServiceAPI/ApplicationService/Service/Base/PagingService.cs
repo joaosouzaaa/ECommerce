@@ -2,7 +2,7 @@
 using ECommerce.ShoppingCartServiceAPI.Domain.Interface;
 using Microsoft.EntityFrameworkCore;
 
-namespace ECommerce.ShoppingCartServiceAPI.ApplicationService.Service;
+namespace ECommerce.ShoppingCartServiceAPI.ApplicationService.Service.Base;
 
 public class PagingService<TEntity> : IPagingService<TEntity> where TEntity : class
 {

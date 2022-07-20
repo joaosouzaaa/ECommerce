@@ -14,7 +14,7 @@ namespace ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Validation.EntitiesVa
 
         private void SetRules()
         {
-            When(p => string.IsNullOrWhiteSpace(p.OtherDetails), () =>
+            When(p => !string.IsNullOrWhiteSpace(p.OtherDetails), () =>
             {
                 RuleFor(p => p.OtherDetails).Length(3, 250).Must(p => !p.All(p => char.IsWhiteSpace(p)))
                     .WithMessage(p => string.IsNullOrWhiteSpace(p.OtherDetails)
