@@ -7,6 +7,7 @@ public static class DependencyInjectionHandler
 {
     public static void AddDIHandler(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddOthersConfigurations();
         services.AddServicesConfiguration();
     }
 }

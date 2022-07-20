@@ -1,4 +1,6 @@
-﻿using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
+﻿using ECommerce.ShoppingCartServiceAPI.ApplicationService.AutoMapperSettings;
+using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
+using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Notification;
 using ECommerce.ShoppingCartServiceAPI.Domain.Interface;
 using ECommerce.ShoppingCartServiceAPI.Domain.Provider;
 using ECommerce.ShoppingCartServiceAPI.Ioc;
@@ -9,12 +11,15 @@ public static class DependencyInjectionHandler
 {
     public static void AddDIHandler(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddSingleton(configuration.GetSection("ConnectionStrings").Get<ConfigurationApplication>());
-        
-        services.AddScoped<INotificationHandler>();
+        //services.AddDistributedMemoryCache(); 
 
-        services.AddScoped<IPagingService<ShoppingCart>>();
+        services.AddStackExchangeRedisCache(options => { options.Configuration = configuration["RedisCacheUrl"]; });
+        services.AddScoped<INotificationHandler, NotificationHandler>();
 
+        services.AddRepositoryDependencyInjection();
         services.AddValidationDependencyInjection();
+        services.AddServiceDependencyInjection();
+
+        AutoMapperConfigurations.Inicialize();
     }
 }
