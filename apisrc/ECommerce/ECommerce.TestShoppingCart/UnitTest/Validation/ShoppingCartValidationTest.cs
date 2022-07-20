@@ -16,7 +16,8 @@ namespace ECommerce.TestShoppingCart.UnitTest.Validation
             _notification = new NotificationHandler();
         }
 
-        [Fact]
+        [Fact(DisplayName = "ShoppingCart Valid")]
+        [Trait("Category", "ShoppingCart Validation")]
         public async Task ShoppingCartPropertiesValidation_Valid_ReturnSucess()
         {
             var cart = ShoppingCartBuilder.NewObject()
@@ -27,7 +28,8 @@ namespace ECommerce.TestShoppingCart.UnitTest.Validation
             Assert.True(!_notification.HasNotification());
         }
 
-        [Theory]
+        [Theory(DisplayName = "ShoppingCart Invalid")]
+        [Trait("Category", "ShoppingCart Validation")]
         [InlineData(0.0)]
         [InlineData(-0.1)]
         [InlineData(-1.0)]
@@ -37,8 +39,10 @@ namespace ECommerce.TestShoppingCart.UnitTest.Validation
                     .WithTotalPrice(price)
                     .DomainBuilder();
 
-            await _validate.ValidationAsync(cart);
+            var result = await _validate.ValidationAsync(cart);
 
+
+            Assert.False(!result.Valid);
             Assert.False(_notification.HasNotification());
         }
 

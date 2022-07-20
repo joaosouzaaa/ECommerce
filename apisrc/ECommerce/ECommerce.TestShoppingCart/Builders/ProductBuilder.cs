@@ -1,15 +1,16 @@
-﻿using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
+﻿using Bogus;
+using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
 
 namespace ECommerce.TestShoppingCart.Builders
 {
     public class ProductBuilder
     {
         private byte[]? _image;
-        private string _name = "TV 50'";
-        private string _description = "Description product";
+        private string _name = new Faker().Commerce.ProductName();
+        private string _description = new Faker().Commerce.ProductDescription();
         private string? _otherDetails = "Others details";
         private int _quantity = 1;
-        private decimal _price = 1150.50m;
+        private decimal _price = decimal.Parse(new Faker().Commerce.Price(100.55m, 9800.71m, 2));
 
         public static ProductBuilder NewObject()
         {

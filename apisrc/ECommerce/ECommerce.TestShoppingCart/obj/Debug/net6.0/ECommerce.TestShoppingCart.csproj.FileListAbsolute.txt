@@ -147,3 +147,4 @@ C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\EComm
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.pdb
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.genruntimeconfig.cache
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ref\ECommerce.TestShoppingCart.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\Bogus.dll

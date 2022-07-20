@@ -16,7 +16,8 @@ namespace ECommerce.TestShoppingCart.UnitTest.Validation
             _notification = new NotificationHandler();
         }
 
-        [Fact]
+        [Fact(DisplayName = "Product Valid")]
+        [Trait("Category", "Product Validation")]
         public async Task ProductValidationProperties_Valid_ReturnSucess()
         {
             var product = ProductBuilder.NewObject()
@@ -27,7 +28,8 @@ namespace ECommerce.TestShoppingCart.UnitTest.Validation
             Assert.True(!_notification.HasNotification());
         }
 
-        [Theory]
+        [Theory(DisplayName = "Product Invalid")]
+        [Trait("Category", "Product Validation")]
         [InlineData("llllllllllllllllllllllCinquentalllllllllllllllllll")]
         [InlineData("T")]
         [InlineData("")]
@@ -56,6 +58,7 @@ namespace ECommerce.TestShoppingCart.UnitTest.Validation
             await _validate.ValidationAsync(Product);
 
             Assert.False(_notification.HasNotification());
+            Assert.IsType<Product>(Product);
         }
     }
 }
