@@ -305,3 +305,11 @@ C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart
 C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\System.Diagnostics.PerformanceCounter.dll
 C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
 >>>>>>> fa2bc921ce02ea4f25bf89336acbc095c6480c1f
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\Moq.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\Moq.AutoMock.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\StackExchange.Redis.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
