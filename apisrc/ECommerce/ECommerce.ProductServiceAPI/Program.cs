@@ -1,8 +1,10 @@
+using ECommerce.ProductServiceAPI.ApplicationService.AutoMapperSettings;
 using ECommerce.ProductServiceAPI.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 
+AutoMapperConfigurations.Inicialize();
 builder.Services.AddControllers();
 builder.Services.AddDIHandler(configuration);
 builder.Services.AddEndpointsApiExplorer();
