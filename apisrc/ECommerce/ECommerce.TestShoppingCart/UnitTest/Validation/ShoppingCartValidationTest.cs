@@ -19,8 +19,7 @@ namespace ECommerce.TestShoppingCart.UnitTest.Validation
         [Fact]
         public async Task ShoppingCartPropertiesValidation_Valid_ReturnSucess()
         {
-            var cart = ShoppingCartBuilder.NewObject()
-                    .DomainBuilder();
+            var cart = ShoppingCartBuilder.NewObject().DomainBuilder();
 
             await _validate.ValidationAsync(cart);
 
