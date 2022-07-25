@@ -1376,23 +1376,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Joao\\.nuget\\packages\\": {},
+    "C:\\Users\\Igor Seven\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI\\ECommerce.ProductServiceAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Igor Seven\\Documents\\MyRepositories\\Microservice\\ECommerce\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI\\ECommerce.ProductServiceAPI.csproj",
       "projectName": "ECommerce.ProductServiceAPI",
-      "projectPath": "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI\\ECommerce.ProductServiceAPI.csproj",
-      "packagesPath": "C:\\Users\\Joao\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI\\obj\\",
+      "projectPath": "C:\\Users\\Igor Seven\\Documents\\MyRepositories\\Microservice\\ECommerce\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI\\ECommerce.ProductServiceAPI.csproj",
+      "packagesPath": "C:\\Users\\Igor Seven\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Igor Seven\\Documents\\MyRepositories\\Microservice\\ECommerce\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Joao\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Igor Seven\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1464,16 +1464,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Joao\\source\\repos\\ECommerce\\apisrc\\ECommerce\\ECommerce.ProductServiceAPI\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

@@ -1,7 +1,4 @@
-﻿using ECommerce.ShoppingCartServiceAPI.Data.ORM.Context;
-using ECommerce.ShoppingCartServiceAPI.Data.Repository.RepositoryBase;
-using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
-using ECommerce.ShoppingCartServiceAPI.Domain.Interface;
+﻿using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
 using ECommerce.ShoppingCartServiceAPI.Domain.Interface.RepositoryContract;
 using Microsoft.Extensions.Caching.Distributed;
 using System.Text;

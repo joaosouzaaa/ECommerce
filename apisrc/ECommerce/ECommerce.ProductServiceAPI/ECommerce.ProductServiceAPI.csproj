@@ -19,12 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ApplicationService\AutoMapperSettings\EntitiesProfile\" />
-    <Folder Include="ApplicationService\DTOs\Response\" />
-    <Folder Include="ApplicationService\DTOs\Request\" />
-    <Folder Include="ApplicationService\Services\Interfaces\" />
     <Folder Include="Domain\Handlers\Validation\ValidationTools\" />
-    <Folder Include="Domain\Handlers\Validation\ValidationEntities\" />
     <Folder Include="Ioc\DependencyInjectionConfiguration\" />
   </ItemGroup>
 
