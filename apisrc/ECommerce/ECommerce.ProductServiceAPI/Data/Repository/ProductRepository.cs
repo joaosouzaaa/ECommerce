@@ -41,9 +41,9 @@ public class ProductRepository : IProductRepository
 
     private async Task<bool> SaveDbAsync() => (await _context.SaveChangesAsync()) > 0;
 
-    public Task<bool> HaveObjectInDb(Expression<Func<Product, bool>> where) => _dbSet.AsNoTracking().AnyAsync(where);
+    public Task<bool> HaveObjectInDbAsync(Expression<Func<Product, bool>> where) => _dbSet.AsNoTracking().AnyAsync(where);
 
-    public async Task<bool> SaveAsync(Product entity)
+    public async Task<bool> SaveRepositoryAsync(Product entity)
     {
         _dbSet.Add(entity);
         _context.Entry(entity).State = EntityState.Added;

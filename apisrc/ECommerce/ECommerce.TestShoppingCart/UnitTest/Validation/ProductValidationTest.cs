@@ -1,31 +1,27 @@
-﻿using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
-using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Notification;
-using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Validation;
+﻿using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Validation.EntitiesValidation;
 using ECommerce.TestShoppingCart.Builders;
 
 namespace ECommerce.TestShoppingCart.UnitTest.Validation
 {
     public class ProductValidationTest
     {
-        private readonly Validate<Product> _validate;
-        private readonly NotificationHandler _notification;
+        private readonly ProductValidation _validate;
 
         public ProductValidationTest()
         {
-            _validate = new Validate<Product>();
-            _notification = new NotificationHandler();
+            _validate = new ProductValidation();
         }
 
         [Fact(DisplayName = "Product Valid")]
         [Trait("Category", "Product Validation")]
-        public async Task ProductValidationProperties_Valid_ReturnSucess()
+        public async Task ProductValidation_ValidProperties_ReturnSucess()
         {
             var product = ProductBuilder.NewObject()
                     .DomainBuilder();
 
-            await _validate.ValidationAsync(product);
+            var result = await _validate.ValidationAsync(product);
 
-            Assert.True(!_notification.HasNotification());
+            Assert.True(result.Valid);
         }
 
         [Theory(DisplayName = "Product Invalid")]
@@ -33,15 +29,15 @@ namespace ECommerce.TestShoppingCart.UnitTest.Validation
         [InlineData("llllllllllllllllllllllCinquentalllllllllllllllllll")]
         [InlineData("T")]
         [InlineData("")]
-        public async Task ProductValidationProperties_InvalidName_RetunrHasNotificationTrue(string name)
+        public async Task ProductValidation_InvalidName_ReturnInvalid(string name)
         {
             var Product = ProductBuilder.NewObject()
                     .WithName(name)
                     .DomainBuilder();
 
-            await _validate.ValidationAsync(Product);
+            var result = await _validate.ValidationAsync(Product);
 
-            Assert.False(_notification.HasNotification());
+            Assert.False(!result.Valid);
         }
 
         [Theory]
@@ -49,16 +45,15 @@ namespace ECommerce.TestShoppingCart.UnitTest.Validation
         [InlineData("ll")]
         [InlineData("T")]
         [InlineData("")]
-        public async Task ProductValidationProperties_InvalidDescription_RetunrHasNotificationTrue(string description)
+        public async Task ProductValidation_InvalidDescription_ReturnInvalid(string description)
         {
             var Product = ProductBuilder.NewObject()
                     .WithDescription(description)
                     .DomainBuilder();
 
-            await _validate.ValidationAsync(Product);
+            var response = await _validate.ValidationAsync(Product);
 
-            Assert.False(_notification.HasNotification());
-            Assert.IsType<Product>(Product);
+            Assert.False(!response.Valid);
         }
     }
 }

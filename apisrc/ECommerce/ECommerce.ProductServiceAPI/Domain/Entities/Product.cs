@@ -13,6 +13,6 @@ public class Product : BaseEntity
     public decimal Price { get; set; }
 
     public int ProductTypeId { get; set; }
-    public ProductType Type { get; set; }
+    public ProductType ProductType { get; set; }
 
 }

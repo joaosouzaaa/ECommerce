@@ -23,7 +23,7 @@ public class ProductTypeMapping : IEntityTypeConfiguration<ProductType>
             .HasColumnName("update_date").IsRequired();
 
         builder.HasMany(pt => pt.Products)
-            .WithOne(p => p.Type)
+            .WithOne(p => p.ProductType)
             .HasForeignKey(p => p.ProductTypeId);
     }
 }

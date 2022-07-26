@@ -1,5 +1,6 @@
 ﻿using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductRequest;
 using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Response.ProductResponse;
+using ECommerce.ProductServiceAPI.Domain.Entities;
 
 namespace ECommerce.ProductServiceAPI.ApplicationService.Services.Interfaces
 {

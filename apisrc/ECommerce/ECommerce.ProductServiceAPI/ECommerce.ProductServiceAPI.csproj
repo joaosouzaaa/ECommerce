@@ -19,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\Handlers\Validation\ValidationTools\" />
     <Folder Include="Ioc\DependencyInjectionConfiguration\" />
   </ItemGroup>
 

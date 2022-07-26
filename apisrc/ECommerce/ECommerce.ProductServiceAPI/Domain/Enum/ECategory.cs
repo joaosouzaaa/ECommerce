@@ -7,5 +7,6 @@ public enum ECategory : ushort
     Furniture,
     Clothing,
     games,
-    Tools
+    Tools,
+    Others
 }

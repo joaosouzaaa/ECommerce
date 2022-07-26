@@ -14,7 +14,8 @@ public class ProductValidation : Validate<Product>
 
     private void SetRules()
     {
-        RuleFor(p => p.Type).SetValidator(new ProductTypeValidation());
+        RuleFor(p => p.ProductType).SetValidator(new ProductTypeValidation());
+
 
         RuleFor(p => p.Name).Length(2, 50).Must(p => !p.All(p => char.IsWhiteSpace(p)))
             .WithMessage(p => string.IsNullOrWhiteSpace(p.Name)
@@ -24,10 +25,10 @@ public class ProductValidation : Validate<Product>
         RuleFor(p => p.Description).Length(2, 500).Must(p => !p.All(p => char.IsWhiteSpace(p)))
             .WithMessage(p => string.IsNullOrWhiteSpace(p.Description)
             ? EMessage.Required.Description().FormatTo("Description")
-            : EMessage.MoreExpected.Description().FormatTo("Description", "{MinLength} a {MaxLength}"));
+            : EMessage.MoreExpected.Description().FormatTo("Description", "{Minlength} a {Maxlength}"));
 
         RuleFor(p => p.Price).GreaterThan(0)
-            .WithMessage(EMessage.ValueExpected.Description().FormatTo("Price", "{value}"));
+            .WithMessage(EMessage.ValueExpected.Description().FormatTo("Price", "0.00"));
 
         When(p => !string.IsNullOrWhiteSpace(p.OtherDetails), () =>
         {

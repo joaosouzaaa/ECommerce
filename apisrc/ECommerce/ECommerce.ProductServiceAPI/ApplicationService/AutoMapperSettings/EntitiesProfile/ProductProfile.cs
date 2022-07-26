@@ -10,15 +10,15 @@ public class ProductProfile : Profile
     public ProductProfile()
     {
         CreateMap<Product, ProductSaveRequest>()
-            .ForMember(pr => pr.Type, map => map.MapFrom(p => p.Type))
+            .ForMember(pr => pr.Type, map => map.MapFrom(p => p.ProductType))
             .ReverseMap();
 
         CreateMap<Product, ProductUpdateRequest>()
-           .ForMember(pr => pr.Type, map => map.MapFrom(p => p.Type))
+           .ForMember(pr => pr.Type, map => map.MapFrom(p => p.ProductType))
            .ReverseMap();
 
         CreateMap<Product, ProductSearchResponse>()
-           .ForMember(pr => pr.Type, map => map.MapFrom(p => p.Type))
+           .ForMember(pr => pr.Type, map => map.MapFrom(p => p.ProductType))
            .ReverseMap();
     }
 }
