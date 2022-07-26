@@ -46,4 +46,7 @@ public class ShoppingCartRepository : IShoppingCartRepository
 
     public async Task RefreshAsync(string key) =>
         await _cache.RefreshAsync(key);
+
+    public async Task<string> GetStringAsync(string key) =>
+        await _cache.GetStringAsync(key);
 }

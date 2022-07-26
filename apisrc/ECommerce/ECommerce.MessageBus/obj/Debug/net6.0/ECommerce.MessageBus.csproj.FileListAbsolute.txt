@@ -10,3 +10,15 @@ C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\EComm
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\obj\Debug\net6.0\refint\ECommerce.MessageBus.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\obj\Debug\net6.0\ECommerce.MessageBus.pdb
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\obj\Debug\net6.0\ref\ECommerce.MessageBus.dll
+C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\bin\Debug\net6.0\ECommerce.MessageBus.deps.json
+C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\bin\Debug\net6.0\ECommerce.MessageBus.dll
+C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\bin\Debug\net6.0\ECommerce.MessageBus.pdb
+C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\obj\Debug\net6.0\ECommerce.MessageBus.csproj.AssemblyReference.cache
+C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\obj\Debug\net6.0\ECommerce.MessageBus.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\obj\Debug\net6.0\ECommerce.MessageBus.AssemblyInfoInputs.cache
+C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\obj\Debug\net6.0\ECommerce.MessageBus.AssemblyInfo.cs
+C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\obj\Debug\net6.0\ECommerce.MessageBus.csproj.CoreCompileInputs.cache
+C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\obj\Debug\net6.0\ECommerce.MessageBus.dll
+C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\obj\Debug\net6.0\refint\ECommerce.MessageBus.dll
+C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\obj\Debug\net6.0\ECommerce.MessageBus.pdb
+C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.MessageBus\obj\Debug\net6.0\ref\ECommerce.MessageBus.dll

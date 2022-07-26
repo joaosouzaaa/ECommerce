@@ -8,7 +8,7 @@ namespace ECommerce.ShoppingCartServiceAPI.ApplicationService.Service.Base;
 public class BaseService<TEntity> where TEntity : class
 {
     private readonly IValidate<TEntity> _validate;
-    private readonly INotificationHandler _notification;
+    protected readonly INotificationHandler _notification;
 
     public BaseService(IValidate<TEntity> validate, INotificationHandler notification)
     {

@@ -1,11 +1,13 @@
 ﻿using Bogus;
+using ECommerce.ShoppingCartServiceAPI.ApplicationService.Request;
+using ECommerce.ShoppingCartServiceAPI.ApplicationService.Response;
 using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
 
 namespace ECommerce.TestShoppingCart.Builders
 {
     public class ProductBuilder
     {
-        private byte[]? _image;
+        private byte[]? _image = { 0x32, 0x00, 0x1E, 0x00 };
         private string _name = new Faker().Commerce.ProductName();
         private string _description = new Faker().Commerce.ProductDescription();
         private string? _otherDetails = "Others details";
@@ -21,11 +23,40 @@ namespace ECommerce.TestShoppingCart.Builders
         {
             return new Product
             {
-                Name = this._name,
-                Description = this._description,
-                OtherDetails = this._otherDetails,
-                Quantity = this._quantity,
-                Price = this._price
+                Id = 1,
+                Name = _name,
+                Description = _description,
+                OtherDetails = _otherDetails,
+                Quantity = _quantity,
+                Price = _price,
+                Image = _image
+            };
+        }
+
+        public ProductSaveRequest SaveRequestBuilder()
+        {
+            return new ProductSaveRequest
+            {
+                Description = _description,
+                Image = _image,
+                Name = _name,
+                OtherDetails = _otherDetails,
+                Price = _price,
+                Quantity = _quantity
+            };
+        }
+
+        public ProductResponse ResponseBuilder()
+        {
+            return new ProductResponse
+            {
+                Id = 1,
+                Description = _description,
+                Image = _image,
+                Name = _name,
+                OtherDetails = _otherDetails,
+                Price = _price,
+                Quantity = _quantity
             };
         }
 
@@ -47,7 +78,7 @@ namespace ECommerce.TestShoppingCart.Builders
             return this;
         }
 
-        public ProductBuilder WithQuanity(int quantity)
+        public ProductBuilder WithQuantity(int quantity)
         {
             _quantity = quantity;
             return this;

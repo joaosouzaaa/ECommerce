@@ -1,4 +1,6 @@
-﻿using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
+﻿using ECommerce.ShoppingCartServiceAPI.ApplicationService.Request;
+using ECommerce.ShoppingCartServiceAPI.ApplicationService.Response;
+using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
 
 namespace ECommerce.TestShoppingCart.Builders
 {
@@ -16,10 +18,40 @@ namespace ECommerce.TestShoppingCart.Builders
 
         public ShoppingCart DomainBuilder()
         {
+            var productList = new List<Product>();
+            productList.Add(ProductBuilder.NewObject().DomainBuilder());
+
             return new ShoppingCart
             {
-                TotalItens = this._totalItens,
-                TotalPrice = this._totalPrice
+                Id = Guid.NewGuid().ToString(),
+                TotalItens = _totalItens,
+                TotalPrice = _totalPrice,
+                Products = productList
+            };
+        }
+
+        public ShoppingCartSaveRequest SaveRequestBuilder()
+        {
+            var productSaveRequestList = new List<ProductSaveRequest>();
+            productSaveRequestList.Add(ProductBuilder.NewObject().SaveRequestBuilder());
+
+            return new ShoppingCartSaveRequest
+            {
+                ProductsSaveRequest = productSaveRequestList
+            };
+        }
+
+        public ShoppingCartResponse ResponseBuilder()
+        {
+            var productResponseList = new List<ProductResponse>();
+            productResponseList.Add(ProductBuilder.NewObject().ResponseBuilder());
+
+            return new ShoppingCartResponse
+            {
+                Id = Guid.NewGuid().ToString(),
+                ProductsResponse = productResponseList,
+                TotalItens = _totalItens,
+                TotalPrice = _totalPrice
             };
         }
 
