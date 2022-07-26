@@ -24,10 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UnitTest\AutoMapper\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ECommerce.ShoppingCartServiceAPI\ECommerce.ShoppingCartServiceAPI.csproj" />
   </ItemGroup>
 

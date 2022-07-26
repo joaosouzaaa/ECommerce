@@ -1,64 +1,88 @@
-﻿using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
-using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Notification;
-using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Validation;
+﻿using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Validation.EntitiesValidation;
 using ECommerce.TestShoppingCart.Builders;
 
 namespace ECommerce.TestShoppingCart.UnitTest.Validation
 {
     public class ProductValidationTest
     {
-        private readonly Validate<Product> _validate;
-        private readonly NotificationHandler _notification;
+        ProductValidation _validate;
 
         public ProductValidationTest()
         {
-            _validate = new Validate<Product>();
-            _notification = new NotificationHandler();
+            _validate = new ProductValidation();
         }
 
         [Fact(DisplayName = "Product Valid")]
         [Trait("Category", "Product Validation")]
         public async Task ProductValidationProperties_Valid_ReturnSucess()
         {
-            var product = ProductBuilder.NewObject()
-                    .DomainBuilder();
+            var product = ProductBuilder.NewObject().DomainBuilder();
 
-            await _validate.ValidationAsync(product);
+            var response = await _validate.ValidateAsync(product);
 
-            Assert.True(!_notification.HasNotification());
+            Assert.True(response.IsValid);
         }
 
         [Theory(DisplayName = "Product Invalid")]
         [Trait("Category", "Product Validation")]
-        [InlineData("llllllllllllllllllllllCinquentalllllllllllllllllll")]
+        [InlineData("llllllllllllllllllllllCinquentalllllllllllllllllllllllllllllllllllllllllllllll")]
         [InlineData("T")]
-        [InlineData("")]
-        public async Task ProductValidationProperties_InvalidName_RetunrHasNotificationTrue(string name)
+        public async Task ProductValidationProperties_InvalidName_ReturnsFalse(string name)
         {
-            var Product = ProductBuilder.NewObject()
-                    .WithName(name)
-                    .DomainBuilder();
+            var product = ProductBuilder.NewObject().WithName(name).DomainBuilder();
 
-            await _validate.ValidationAsync(Product);
+            var response = await _validate.ValidateAsync(product);
 
-            Assert.False(_notification.HasNotification());
+            Assert.False(response.IsValid);
         }
 
         [Theory]
-        [InlineData("cento e cinquentalllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll")]
+        [InlineData("cento e cinquentalllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")]
         [InlineData("ll")]
         [InlineData("T")]
-        [InlineData("")]
-        public async Task ProductValidationProperties_InvalidDescription_RetunrHasNotificationTrue(string description)
+        public async Task ProductValidationProperties_InvalidDescription_ReturnsFalse(string description)
         {
-            var Product = ProductBuilder.NewObject()
-                    .WithDescription(description)
-                    .DomainBuilder();
+            var product = ProductBuilder.NewObject().WithDescription(description).DomainBuilder();
 
-            await _validate.ValidationAsync(Product);
+            var response = await _validate.ValidateAsync(product);
 
-            Assert.False(_notification.HasNotification());
-            Assert.IsType<Product>(Product);
+            Assert.False(response.IsValid);
+        }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-2)]
+        public async Task ProductValidationProperties_InvalidQuantity_ReturnsFalse(int quantity)
+        {
+            var product = ProductBuilder.NewObject().WithQuantity(quantity).DomainBuilder();
+
+            var response = await _validate.ValidateAsync(product);
+
+            Assert.False(response.IsValid);
+        }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-2)]
+        public async Task ProductValidationProperties_InvalidPrice_ReturnsFalse(decimal price)
+        {
+            var product = ProductBuilder.NewObject().WithPrice(price).DomainBuilder();
+
+            var response = await _validate.ValidateAsync(product);
+
+            Assert.False(response.IsValid);
+        }
+
+        [Theory]
+        [InlineData("a")]
+        [InlineData("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")]
+        public async Task ProductValidationProperties_InvalidOtherDetails_ReturnsFalse(string otherDetails)
+        {
+            var product = ProductBuilder.NewObject().WithOthersDetails(otherDetails).DomainBuilder();
+
+            var response = await _validate.ValidateAsync(product);
+
+            Assert.False(response.IsValid);
         }
     }
 }

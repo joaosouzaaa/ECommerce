@@ -7,7 +7,7 @@ namespace ECommerce.ShoppingCartServiceAPI.ApplicationService.Interfaces.Shoppin
     {
         Task<bool> SetAsync(ShoppingCartSaveRequest saveRequest);
         Task<ShoppingCartResponse> GetAsync(string key);
-        Task RemoveAsync(string key);
-        Task RefreshAsync(string key);
+        Task<bool> RemoveAsync(string key);
+        Task<bool> RefreshAsync(string key);
     }
 }

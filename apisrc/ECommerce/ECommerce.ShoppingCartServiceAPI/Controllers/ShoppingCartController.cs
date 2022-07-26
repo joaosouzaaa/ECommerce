@@ -11,7 +11,7 @@ public class ShoppingCartController : Controller
 {
     private readonly IShoppingCartService _shoppingCartService;
 
-    public ShoppingCartController(IShoppingCartService shoppingCartService, IRabbitMQMessageSender rabbitMQMessageSender)
+    public ShoppingCartController(IShoppingCartService shoppingCartService)
     {
         _shoppingCartService = shoppingCartService;
     }
@@ -30,12 +30,12 @@ public class ShoppingCartController : Controller
 
     [HttpDelete("remove_async")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task RemoveAsync([FromQuery] string key) =>
+    public async Task<bool> RemoveAsync([FromQuery] string key) =>
        await _shoppingCartService.RemoveAsync(key);
 
     [HttpPut("refresh_async")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(IEnumerable<DomainNotification>))]
-    public async Task RefreshAsync([FromQuery] string key) =>
+    public async Task<bool> RefreshAsync([FromQuery] string key) =>
        await _shoppingCartService.RefreshAsync(key);
 }

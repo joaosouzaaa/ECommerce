@@ -21,8 +21,8 @@ namespace ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Notification
 
             if (_notifications.Any() == true)
                 return false;
-            else
-                return true;
+
+            return true;
         }
 
         public void AddNotification(string key, string value) =>

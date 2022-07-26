@@ -5,7 +5,7 @@ using FluentValidation.Results;
 
 namespace ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Validation;
 
-public class Validate<TEntity> : AbstractValidator<TEntity>, IValidate<TEntity> where TEntity : class
+public abstract class Validate<TEntity> : AbstractValidator<TEntity>, IValidate<TEntity> where TEntity : class
 {
     private ValidationResult _validationResult { get; set; }
 

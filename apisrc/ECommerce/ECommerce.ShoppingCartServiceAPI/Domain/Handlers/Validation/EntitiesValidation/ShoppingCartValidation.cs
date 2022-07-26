@@ -16,7 +16,6 @@ namespace ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Validation.EntitiesVa
         {
             RuleForEach(sc => sc.Products).SetValidator(new ProductValidation());
 
-
             When(sc => sc.TotalItens > 0, () =>
             {
                 RuleFor(sc => sc.TotalPrice).GreaterThan(0)

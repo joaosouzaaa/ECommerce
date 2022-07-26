@@ -8,4 +8,5 @@ public interface IShoppingCartRepository
     Task<ShoppingCart> GetAsync(string key);
     Task RemoveAsync(string key);
     Task RefreshAsync(string key);
+    Task<string> GetStringAsync(string key);
 }
