@@ -1,8 +1,9 @@
-﻿using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductTypeRequest;
+﻿using ECommerce.MessageBus.Entities;
+using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductTypeRequest;
 
 namespace ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductRequest;
 
-public class ProductSaveRequest
+public class ProductSaveRequest : BaseMessage
 {
     public byte[]? Image { get; set; }
     public string Name { get; set; }
@@ -11,5 +12,5 @@ public class ProductSaveRequest
     public int Quantity { get; set; }
     public decimal Price { get; set; }
 
-    public ProductTypeSaveRequest Type { get; set; }
+    public ProductTypeSaveRequest ProductType { get; set; }
 }

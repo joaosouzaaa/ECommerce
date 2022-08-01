@@ -9,32 +9,32 @@ public class ProductMapping : IEntityTypeConfiguration<Product>
     public void Configure(EntityTypeBuilder<Product> builder)
     {
         builder.ToTable(nameof(Product));
-        builder.HasKey(p => p.Id).HasName("productId");
+        builder.HasKey(p => p.Id);
         builder.Property(p => p.ProductTypeId).HasColumnName("productType_Id");
 
-        builder.Property(p => p.Image).HasColumnType("varbinary")
-            .HasColumnName("image").IsRequired();
+        builder.Property(p => p.Image).HasColumnType("longblob")
+            .HasColumnName("product_image").IsRequired(false);
 
         builder.Property(p => p.Name).HasColumnType("varchar(50)").IsUnicode()
-            .HasColumnName("name").IsRequired();
+            .HasColumnName("product_name").IsRequired();
 
-        builder.Property(p => p.Description).HasColumnType("varchar(250)").IsUnicode()
-            .HasColumnName("description").IsRequired();
+        builder.Property(p => p.Description).HasColumnType("varchar(500)").IsUnicode()
+            .HasColumnName("product_description").IsRequired();
 
-        builder.Property(p => p.OtherDetails).HasColumnType("varchar(250)").IsUnicode()
-            .HasColumnName("other_datails").IsRequired(false);
+        builder.Property(p => p.OtherDetails).HasColumnType("varchar(900)").IsUnicode()
+            .HasColumnName("product_other_datails").IsRequired();
 
         builder.Property(p => p.Quantity).HasColumnType("int")
-            .HasColumnName("quantity").IsRequired();
+            .HasColumnName("product_quantity").IsRequired();
 
         builder.Property(p => p.Price).HasColumnType("decimal").HasPrecision(12, 2)
-            .HasColumnName("price").IsRequired();
+            .HasColumnName("product_price").IsRequired();
 
         builder.Property(p => p.CreateDate).HasColumnType("datetime")
-            .HasColumnName("create_date").IsRequired(); 
+            .HasColumnName("product_create_date").IsRequired(); 
         
         builder.Property(p => p.UpdateDate).HasColumnType("datetime")
-            .HasColumnName("update_date").IsRequired();
+            .HasColumnName("product_update_date").IsRequired();
 
     }
 }

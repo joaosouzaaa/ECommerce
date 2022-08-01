@@ -4,6 +4,7 @@ using ECommerce.ProductServiceAPI.Domain.Handlers.Pagination;
 using ECommerce.ProductServiceAPI.Domain.Interface;
 using ECommerce.ProductServiceAPI.Domain.Interface.RepositoryContract;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
 namespace ECommerce.ProductServiceAPI.Data.Repository;
@@ -19,40 +20,45 @@ public class ProductRepository : IProductRepository
         _pagingService = pagingService;
     }
 
-    public async Task<Product> FindByAsync(int id, bool asNoTracking = false, params Expression<Func<Product, object>>[] includes) =>
-    await IncludeMultiple(_dbSet, asNoTracking, includes).FirstOrDefaultAsync(e => e.Id == id);
+    public async Task<Product> FindByAsync(int id, Func<IQueryable<Product>, IIncludableQueryable<Product, object>> include = null, bool asNoTracking = false) =>
+        await IncludeMultiple().SingleOrDefaultAsync(p => p.Id == id);
 
-
-    public async Task<PageList<Product>> FindWithEntitiesPaging(PageParams pageParams, bool asNoTracking = false, params Expression<Func<Product, object>>[] includes)
+    public async Task<PageList<Product>> FindWithEntitiesPaging(PageParams pageParams, Func<IQueryable<Product>, IIncludableQueryable<Product, object>> include = null, bool asNoTracking = false)
     {
-        var query = IncludeMultiple(_dbSet, asNoTracking, includes);
+        var query = IncludeMultiple(include, asNoTracking);
 
         return await _pagingService.CreatePaginationAsync(query, pageParams.PageNumber, pageParams.PageSize);
     }
 
-    private IQueryable<Product> IncludeMultiple(IQueryable<Product> query, bool asNoTrack, params Expression<Func<Product, object>>[] includes)
-    {
-        query = includes.Aggregate(query, (current, include) => current.Include(include));
+    public Task<bool> HaveObjectInDbAsync(Expression<Func<Product, bool>> where) => _dbSet.AsNoTracking().AnyAsync(where);
 
-        if (asNoTrack) query = query.AsNoTracking();
+    public void Dispose() => _context.Dispose();
+
+    private IQueryable<Product> IncludeMultiple( Func<IQueryable<Product>, IIncludableQueryable<Product, object>> include = null, bool asNoTracking = false)
+    {
+        var query = (IQueryable<Product>)_dbSet;
+
+        if (asNoTracking)
+            query.AsNoTracking();
+
+        if (include != null)
+            query = include(query);
 
         return query;
     }
 
     private async Task<bool> SaveDbAsync() => (await _context.SaveChangesAsync()) > 0;
 
-    public Task<bool> HaveObjectInDbAsync(Expression<Func<Product, bool>> where) => _dbSet.AsNoTracking().AnyAsync(where);
 
-    public async Task<bool> SaveRepositoryAsync(Product entity)
+
+    public async Task<bool> SaveAsync(Product entity)
     {
-        _dbSet.Add(entity);
-        _context.Entry(entity).State = EntityState.Added;
+        await _dbSet.AddAsync(entity);
         return await SaveDbAsync();
     }
 
     public async Task<bool> UpdateAsync(Product entity)
     {
-        _dbSet.Update(entity);
         _context.Entry(entity).State = EntityState.Modified;
         return await SaveDbAsync();
     }
@@ -67,6 +73,6 @@ public class ProductRepository : IProductRepository
         return await SaveDbAsync();
     }
 
-    public void Dispose() => _context.Dispose();
+   
    
 }

@@ -1,53 +1,85 @@
 ﻿using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductRequest;
 using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Response.ProductResponse;
-using ECommerce.ProductServiceAPI.ApplicationService.Services.Interfaces;
 using ECommerce.ProductServiceAPI.Domain.Entities;
 using ECommerce.ProductServiceAPI.Domain.Enum;
 using ECommerce.ProductServiceAPI.Domain.Extensions;
+using ECommerce.ProductServiceAPI.Domain.Handlers.Notification;
+using ECommerce.ProductServiceAPI.Domain.Handlers.Pagination;
 using ECommerce.ProductServiceAPI.Domain.Interface;
 using ECommerce.ProductServiceAPI.Domain.Interface.RepositoryContract;
+using ECommerce.ProductServiceAPI.Domain.Interface.ServiceContract;
+using ECommerce.ProductServiceAPI.RabbitMQSender;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.ProductServiceAPI.ApplicationService.Services
 {
     public class ProductService : BaseService<Product>, IProductService
     {
         private readonly IProductRepository _productRepository;
+        private readonly IRabbitMQMessageSender _rabbitMQ;
+        private const string _queue = "RegisterProductQueue";
 
-        public ProductService(IValidate<Product> validate, INotificationHandler notification, IProductRepository productRepository) 
+        public ProductService(IValidate<Product> validate, 
+                              INotificationHandler notification,
+                              IProductRepository productRepository,
+                              IRabbitMQMessageSender rabbitMQ) 
             : base(validate, notification)
         {
             this._productRepository = productRepository;
+            this._rabbitMQ = rabbitMQ;
         }
 
-        public async Task<ProductSearchResponse> FindBy(int id)
+        public void Dispose() => _productRepository.Dispose();
+
+        public async Task<ProductSearchResponse> FindByAsync(int id)
         {
-            if (!await _productRepository.HaveObjectInDbAsync(p => p.Id == id))
-                _notification.AddNotification("Id", EMessage.NotFound.Description().FormatTo("Product"));
+            var product = await _productRepository.FindByAsync(id,  p => p.Include(p => p.ProductType), false);
+                
+            return product.MapTo<Product, ProductSearchResponse>();
+        }
 
-            var response = await _productRepository.FindByAsync(id);
+        public async Task<PageList<ProductSearchResponse>> FindByWithPagination(PageParams pageParams)
+        {
+            var products = await _productRepository.FindWithEntitiesPaging(pageParams, p => p.Include(p => p.ProductType));
 
-            return response.MapTo<Product, ProductSearchResponse>();
+            return products.MapTo<PageList<Product>, PageList<ProductSearchResponse>>();
         }
 
         public async Task<bool> SaveAsync(ProductSaveRequest saveRequest)
         {
+            if (await _productRepository.HaveObjectInDbAsync(p => p.Name == saveRequest.Name))
+                return _notification.AddNotification(new DomainNotification("Exist", EMessage.Exist.Description().FormatTo($"{saveRequest.Name}")));
+
             var product = saveRequest.MapTo<ProductSaveRequest, Product>();
 
             if (!await ValidationAsync(product))
                 return false;
-            else
-                return await _productRepository.SaveRepositoryAsync(product);
+
+            _rabbitMQ.SendMessage(saveRequest, _queue);
+            return await _productRepository.SaveAsync(product);
         }
 
-        public Task<bool> UpdateAsync(ProductUpdateRequest updateRequest)
+        public async Task<bool> UpdateAsync(ProductUpdateRequest updateRequest)
         {
-            throw new NotImplementedException();
+            var product = await _productRepository.FindByAsync(updateRequest.ProductId);
+            if (product == null)
+                return _notification.AddNotification(new DomainNotification("not found", EMessage.NotFound.Description().FormatTo("Produto")));
+
+            product = updateRequest.MapTo<ProductUpdateRequest, Product>();
+
+            if (!await ValidationAsync(product))
+                return false;
+
+            _rabbitMQ.SendMessage(updateRequest, _queue);
+            return await _productRepository.UpdateAsync(product);
         }
 
-        public Task DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
-        }
+            if (!await _productRepository.HaveObjectInDbAsync(p => p.Id == id))
+                return _notification.AddNotification(new DomainNotification("not found", EMessage.NotFound.Description().FormatTo("Produto")));
 
+            return await _productRepository.DeleteAsync(id);
+        } 
     }
 }

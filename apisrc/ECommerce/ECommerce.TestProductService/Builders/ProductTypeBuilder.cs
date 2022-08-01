@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductTypeRequest;
 using ECommerce.ProductServiceAPI.Domain.Entities;
 using ECommerce.ProductServiceAPI.Domain.Enum;
 
@@ -8,14 +9,13 @@ namespace ECommerce.TestProductService.Builders
     {
         private string _name = new Faker().Commerce.Product();
         private ECategory _category = new Faker().PickRandom<ECategory>();
-        private List<Product> _products;
 
         public static ProductTypeBuilder NewObject()
         {
             return new ProductTypeBuilder();
         }
 
-        public ProductType DomainBuilder()
+        public ProductType DomainBuild()
         {
             return new ProductType
             {
@@ -24,6 +24,26 @@ namespace ECommerce.TestProductService.Builders
                 Products = new List<Product>(),
                 CreateDate = DateTime.Now,
                 UpdateDate = DateTime.Now
+            };
+        }
+
+        public ProductTypeSaveRequest DtoSaveBuild()
+        {
+            return new ProductTypeSaveRequest
+            {
+                
+                Name = _name,
+                Category = _category
+            };
+        }
+
+        public ProductTypeUpdateRequest DtoUpdateBuild()
+        {
+            return new ProductTypeUpdateRequest
+            {
+                ProductTypeId = new Faker().Random.Int(1, 100),
+                Name = _name,
+                Category = _category
             };
         }
 

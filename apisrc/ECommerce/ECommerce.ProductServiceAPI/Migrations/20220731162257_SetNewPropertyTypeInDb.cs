@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ECommerce.ProductServiceAPI.Migrations
 {
-    public partial class initialMigration : Migration
+    public partial class SetNewPropertyTypeInDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,15 +19,15 @@ namespace ECommerce.ProductServiceAPI.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    name = table.Column<string>(type: "varchar(50)", nullable: false)
+                    product_type_name = table.Column<string>(type: "VARCHAR(50)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    category = table.Column<ushort>(type: "smallint unsigned", nullable: false),
-                    create_date = table.Column<DateTime>(type: "datetime", nullable: false),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: false)
+                    product_type_category = table.Column<ushort>(type: "smallint unsigned", nullable: false),
+                    product_type_create_date = table.Column<DateTime>(type: "datetime", nullable: false),
+                    product_type_update_date = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("productTypeId", x => x.Id);
+                    table.PrimaryKey("PK_ProductType", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -37,21 +37,22 @@ namespace ECommerce.ProductServiceAPI.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    name = table.Column<string>(type: "varchar(50)", nullable: false)
+                    product_image = table.Column<byte[]>(type: "longblob", nullable: true),
+                    product_name = table.Column<string>(type: "VARCHAR(50)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    description = table.Column<string>(type: "varchar(250)", nullable: false)
+                    product_description = table.Column<string>(type: "VARCHAR(500)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    other_datails = table.Column<string>(type: "varchar(250)", nullable: true)
+                    product_other_datails = table.Column<string>(type: "VARCHAR(900)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    quantity = table.Column<int>(type: "int", nullable: false),
-                    price = table.Column<decimal>(type: "decimal(12,2)", precision: 12, scale: 2, nullable: false),
+                    product_quantity = table.Column<int>(type: "int", nullable: false),
+                    product_price = table.Column<decimal>(type: "decimal(12,2)", precision: 12, scale: 2, nullable: false),
                     productType_Id = table.Column<int>(type: "int", nullable: false),
-                    create_date = table.Column<DateTime>(type: "datetime", nullable: false),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: false)
+                    product_create_date = table.Column<DateTime>(type: "datetime", nullable: false),
+                    product_update_date = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("productId", x => x.Id);
+                    table.PrimaryKey("PK_Product", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Product_ProductType_productType_Id",
                         column: x => x.productType_Id,

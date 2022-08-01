@@ -8,18 +8,23 @@ using ECommerce.ShoppingCartServiceAPI.Domain.Extensions;
 using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Notification;
 using ECommerce.ShoppingCartServiceAPI.Domain.Interface;
 using ECommerce.ShoppingCartServiceAPI.Domain.Interface.RepositoryContract;
+using ECommerce.ShoppingCartServiceAPI.RabbitMQSender;
 
 namespace ECommerce.ShoppingCartServiceAPI.ApplicationService.Service;
 
 public class ShoppingCartService : BaseService<ShoppingCart>, IShoppingCartService
 {
     private readonly IShoppingCartRepository _shoppingCartRepository;
+    private readonly IRabbitMQMessageSender _rabbitMQ;
 
     public ShoppingCartService(IShoppingCartRepository shoppingCartRepository,
-                               IValidate<ShoppingCart> validate, INotificationHandler notification)
+                               IValidate<ShoppingCart> validate,
+                               INotificationHandler notification,
+                               IRabbitMQMessageSender rabbitMQ)
                                : base(validate, notification)
     {
         _shoppingCartRepository = shoppingCartRepository;
+        _rabbitMQ = rabbitMQ;
     }
 
     public async Task<bool> SetAsync(ShoppingCartSaveRequest saveRequest)
@@ -32,6 +37,8 @@ public class ShoppingCartService : BaseService<ShoppingCart>, IShoppingCartServi
 
         if (!await ValidationAsync(shoppingCart))
             return false;
+
+        _rabbitMQ.SendMessage(saveRequest, "AddProductQueue");
         
         await _shoppingCartRepository.SetAsync(shoppingCart);
 

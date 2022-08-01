@@ -1,14 +1,15 @@
-﻿using Bogus;
-using ECommerce.ProductServiceAPI.ApplicationService.AutoMapperSettings;
+﻿using ECommerce.ProductServiceAPI.ApplicationService.AutoMapperSettings;
 using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductRequest;
-using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductTypeRequest;
+using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Response.ProductResponse;
 using ECommerce.ProductServiceAPI.ApplicationService.Services;
 using ECommerce.ProductServiceAPI.Domain.Entities;
-using ECommerce.ProductServiceAPI.Domain.Enum;
 using ECommerce.ProductServiceAPI.Domain.Extensions;
 using ECommerce.ProductServiceAPI.Domain.Handlers.Notification;
 using ECommerce.ProductServiceAPI.Domain.Handlers.Validation.ValidationEntities;
 using ECommerce.ProductServiceAPI.Domain.Interface.RepositoryContract;
+using ECommerce.ProductServiceAPI.RabbitMQSender;
+using ECommerce.TestProductService.Builders;
+using Microsoft.EntityFrameworkCore;
 using Moq;
 using Xunit;
 
@@ -19,6 +20,8 @@ public class ProductServiceTest
     private Mock<IProductRepository> _productRepository;
     private ProductValidation _validate;
     private NotificationHandler _notification;
+    private Mock<IRabbitMQMessageSender> _rabbitMQ;
+    private ProductService _productService;
 
     public ProductServiceTest()
     {
@@ -26,64 +29,116 @@ public class ProductServiceTest
         _productRepository = new Mock<IProductRepository>();
         _validate = new ProductValidation();
         _notification = new NotificationHandler();
+        _rabbitMQ = new Mock<IRabbitMQMessageSender>();
+        _productService = new ProductService(_validate, _notification, _productRepository.Object, _rabbitMQ.Object);
     }
 
-    [Fact(DisplayName = "ProductService SaveAsync")]
-    [Trait("Success", "Post / SaveAsync")]
-    public async Task ProductService_ExecuteSaveAsync_ReturnSucess()
+    [Fact(DisplayName = "ProductService")]
+    [Trait("Category", "SaveAsync success")]
+    public async Task ProductServiceExecuteSaveAsync_SuccessScenario_ReturnSucess()
     {
-        var dtoSave = new ProductSaveRequest
-        {
-            Image = null,
-            Name = new Faker().Commerce.ProductName(),
-            Description = new Faker().Commerce.ProductDescription(),
-            OtherDetails = new Faker().Commerce.ProductDescription(),
-            Quantity = 1,
-            Price = decimal.Parse(new Faker().Commerce.Price(100.55m, 9890.86m)),
-            Type = new ProductTypeSaveRequest
-            {
-                Name = new Faker().Commerce.ProductName(),
-                Category = ECategory.HomeAppliance
-            }
-        };
+        var dtoSave = ProductBuilder.NewObject().DtoSaveBuild();
 
         var product = dtoSave.MapTo<ProductSaveRequest, Product>();
-        _productRepository.Setup(p => p.SaveRepositoryAsync(It.IsAny<Product>())).Returns(Task.FromResult(true)).Verifiable();
-        var productService = new ProductService(_validate, _notification, _productRepository.Object);
-        var result = await productService.SaveAsync(dtoSave);
+        _productRepository.Setup(p => p.SaveAsync(It.IsAny<Product>())).Returns(Task.FromResult(true)).Verifiable();
+        var result = await _productService.SaveAsync(dtoSave);
 
 
         Assert.True(!_notification.HasNotification());
         Assert.True(result);
-        _productRepository.Verify(p => p.SaveRepositoryAsync(It.IsAny<Product>()), Times.Exactly(1));
+        _productRepository.Verify(p => p.SaveAsync(It.IsAny<Product>()), Times.Once);
     }
 
-    [Fact(DisplayName = "ProductService SaveAsync")]
-    [Trait("Failed", "Post / SaveAsync")]
-    public async Task ProductService_ExecuteSaveAsync_ReturnFail()
+    [Fact(DisplayName = "ProductService")]
+    [Trait("Category", "SaveAsync failed")]
+    public async Task ProductServiceExecuteSaveAsync_ExistObjectInDb_ReturnFail()
     {
-        var dtoSave = new ProductSaveRequest
-        {
-            Image = null,
-            Name = "",
-            Description = new Faker().Commerce.ProductDescription(),
-            OtherDetails = new Faker().Commerce.ProductDescription(),
-            Quantity = 1,
-            Price = decimal.Parse(new Faker().Commerce.Price(100.55m, 9890.86m)),
-            Type = new ProductTypeSaveRequest
-            {
-                Name = new Faker().Commerce.ProductName(),
-                Category = ECategory.HomeAppliance
-            }
-        };
-
+        var dtoSave = ProductBuilder.NewObject().DtoSaveBuild();
         var product = dtoSave.MapTo<ProductSaveRequest, Product>();
-        _productRepository.Setup(p => p.SaveRepositoryAsync(It.IsAny<Product>())).Returns(Task.FromResult(false)).Verifiable();
-        var productService = new ProductService(_validate, _notification, _productRepository.Object);
-        var result = await productService.SaveAsync(dtoSave);
+        _productRepository.Setup(p => p.HaveObjectInDbAsync(p => p.Name == dtoSave.Name)).Returns(Task.FromResult(true));
+        _productRepository.Setup(p => p.SaveAsync(It.IsAny<Product>())).Returns(Task.FromResult(false)).Verifiable();
+        var result = await _productService.SaveAsync(dtoSave);
 
         Assert.True(_notification.HasNotification());
         Assert.True(!result);
-        _productRepository.Verify(p => p.SaveRepositoryAsync(It.IsAny<Product>()), Times.Exactly(0));
+        _productRepository.Verify(p => p.SaveAsync(It.IsAny<Product>()), Times.Never);
+    }
+
+    [Fact(DisplayName = "ProductService")]
+    [Trait("Category", "UpdateAsync success")]
+    public async Task ProductServiceExecuteUpdateAsync_SuccessScenario_ReturnSucess()
+    {
+        var dtoUpdate = ProductBuilder.NewObject().DtoUpdateBuild();
+        var product = dtoUpdate.MapTo<ProductUpdateRequest, Product>();
+        _productRepository.Setup(p => p.FindByAsync(dtoUpdate.ProductId, null, false)).Returns(Task.FromResult(product));
+        _productRepository.Setup(p => p.UpdateAsync(It.IsAny<Product>())).Returns(Task.FromResult(true)).Verifiable();
+        var result = await _productService.UpdateAsync(dtoUpdate);
+
+
+        Assert.True(!_notification.HasNotification());
+        Assert.True(result);
+        _productRepository.Verify(p => p.UpdateAsync(It.IsAny<Product>()), Times.Once);
+    }
+
+
+    [Fact(DisplayName = "ProductService")]
+    [Trait("Category", "UpdateAsync failed")]
+    public async Task ProductServiceExecuteUpdateAsync_InvalidID_ReturnFail()
+    {
+        var dtoUpdate = ProductBuilder.NewObject().DtoUpdateBuild();
+        var product = dtoUpdate.MapTo<ProductUpdateRequest, Product>();
+        _productRepository.Setup(p => p.FindByAsync(dtoUpdate.ProductId, null, false)).Returns(Task.FromResult<Product>(null));
+        _productRepository.Setup(p => p.UpdateAsync(It.IsAny<Product>())).Returns(Task.FromResult(true)).Verifiable();
+        var result = await _productService.UpdateAsync(dtoUpdate);
+
+
+        Assert.True(_notification.HasNotification());
+        Assert.True(!result);
+        _productRepository.Verify(p => p.UpdateAsync(It.IsAny<Product>()), Times.Never);
+    }
+
+    [Fact(DisplayName = "ProductService")]
+    [Trait("Category", "DeleteAsync success")]
+    public async Task ProductServiceExecuteDeleteAsync_SuccessScenario_ReturnSucess()
+    {
+        var id = 10;
+        _productRepository.Setup(p => p.HaveObjectInDbAsync(p => p.Id == id)).Returns(Task.FromResult(true));
+        _productRepository.Setup(p => p.DeleteAsync(id)).Returns(Task.FromResult(true));
+        var requestResult = await _productService.DeleteAsync(id);
+
+        Assert.True(!_notification.HasNotification());
+        Assert.True(requestResult);
+        _productRepository.Verify(p => p.DeleteAsync(id), Times.Once);
+    }
+
+
+    [Fact(DisplayName = "ProductService")]
+    [Trait("Category", "DeleteAsync failed")]
+    public async Task ProductServiceExecuteDeleteAsync_InvalidID_ReturnFail()
+    {
+        var id = 15;
+        _productRepository.Setup(p => p.HaveObjectInDbAsync(p => p.Id == id)).Returns(Task.FromResult(false));
+        _productRepository.Setup(p => p.DeleteAsync(id)).Returns(Task.FromResult(false));
+        var requestResult = await _productService.DeleteAsync(id);
+
+        Assert.True(_notification.HasNotification());
+        Assert.True(!requestResult);
+        _productRepository.Verify(p => p.DeleteAsync(id), Times.Never);
+    }
+
+
+    [Fact(DisplayName = "ProductService")]
+    [Trait("Category", "FindByAsync success")]
+    public async Task ProductServiceExecuteFindByAsyn_SuccessScenario_ReturnObject()
+    {
+
+        //refatorar toda logica
+        var product = ProductBuilder.NewObject().DomainBuild();
+        _productRepository.Setup(p => p.FindByAsync(product.Id, p => p.Include(p => p.ProductType), false)).Returns(Task.FromResult(product));
+
+        var requestResult = await _productService.FindByAsync(product.Id);
+
+        _productRepository.Verify(r => r.FindByAsync(product.Id, p => p.Include(p => p.ProductType), false), Times.Once());
+        Assert.NotNull(requestResult);
     }
 }

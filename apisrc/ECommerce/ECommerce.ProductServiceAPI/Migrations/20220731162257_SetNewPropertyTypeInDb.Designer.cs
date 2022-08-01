@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ECommerce.ProductServiceAPI.Migrations
 {
     [DbContext(typeof(ProductMySqlContext))]
-    [Migration("20220623013335_initialMigration")]
-    partial class initialMigration
+    [Migration("20220731162257_SetNewPropertyTypeInDb")]
+    partial class SetNewPropertyTypeInDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,29 +29,34 @@ namespace ECommerce.ProductServiceAPI.Migrations
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime")
-                        .HasColumnName("create_date");
+                        .HasColumnName("product_create_date");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .IsUnicode(true)
-                        .HasColumnType("varchar(250)")
-                        .HasColumnName("description");
+                        .HasColumnType("VARCHAR(500)")
+                        .HasColumnName("product_description");
+
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("longblob")
+                        .HasColumnName("product_image");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .IsUnicode(true)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("name");
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnName("product_name");
 
                     b.Property<string>("OtherDetails")
+                        .IsRequired()
                         .IsUnicode(true)
-                        .HasColumnType("varchar(250)")
-                        .HasColumnName("other_datails");
+                        .HasColumnType("VARCHAR(900)")
+                        .HasColumnName("product_other_datails");
 
                     b.Property<decimal>("Price")
                         .HasPrecision(12, 2)
                         .HasColumnType("decimal(12,2)")
-                        .HasColumnName("price");
+                        .HasColumnName("product_price");
 
                     b.Property<int>("ProductTypeId")
                         .HasColumnType("int")
@@ -59,14 +64,13 @@ namespace ECommerce.ProductServiceAPI.Migrations
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int")
-                        .HasColumnName("quantity");
+                        .HasColumnName("product_quantity");
 
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime")
-                        .HasColumnName("update_date");
+                        .HasColumnName("product_update_date");
 
-                    b.HasKey("Id")
-                        .HasName("productId");
+                    b.HasKey("Id");
 
                     b.HasIndex("ProductTypeId");
 
@@ -81,37 +85,36 @@ namespace ECommerce.ProductServiceAPI.Migrations
 
                     b.Property<ushort>("Category")
                         .HasColumnType("smallint unsigned")
-                        .HasColumnName("category");
+                        .HasColumnName("product_type_category");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime")
-                        .HasColumnName("create_date");
+                        .HasColumnName("product_type_create_date");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .IsUnicode(true)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("name");
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnName("product_type_name");
 
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime")
-                        .HasColumnName("update_date");
+                        .HasColumnName("product_type_update_date");
 
-                    b.HasKey("Id")
-                        .HasName("productTypeId");
+                    b.HasKey("Id");
 
                     b.ToTable("ProductType", (string)null);
                 });
 
             modelBuilder.Entity("ECommerce.ProductServiceAPI.Domain.Entities.Product", b =>
                 {
-                    b.HasOne("ECommerce.ProductServiceAPI.Domain.Entities.ProductType", "Type")
+                    b.HasOne("ECommerce.ProductServiceAPI.Domain.Entities.ProductType", "ProductType")
                         .WithMany("Products")
                         .HasForeignKey("ProductTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Type");
+                    b.Navigation("ProductType");
                 });
 
             modelBuilder.Entity("ECommerce.ProductServiceAPI.Domain.Entities.ProductType", b =>

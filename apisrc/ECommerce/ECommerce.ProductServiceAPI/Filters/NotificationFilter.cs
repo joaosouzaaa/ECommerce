@@ -15,7 +15,7 @@ namespace ECommerce.ProductServiceAPI.Filters
 
         public override void OnActionExecuted(ActionExecutedContext context)
         {
-            if (_notification.HasNotification())
+            if (!ExternalMethodFilter.IsMethodGet(context) && _notification.HasNotification())
                 context.Result = new BadRequestObjectResult(_notification.GetNotifications());
 
             base.OnActionExecuted(context);

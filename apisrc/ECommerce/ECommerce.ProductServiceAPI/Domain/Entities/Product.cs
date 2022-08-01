@@ -1,7 +1,4 @@
-﻿
-using System.Collections;
-
-namespace ECommerce.ProductServiceAPI.Domain.Entities;
+﻿namespace ECommerce.ProductServiceAPI.Domain.Entities;
 
 public class Product : BaseEntity
 {

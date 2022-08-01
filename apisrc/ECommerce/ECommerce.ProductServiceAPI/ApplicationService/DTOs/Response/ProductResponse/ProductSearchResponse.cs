@@ -1,4 +1,4 @@
-﻿using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductTypeRequest;
+﻿using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Response.ProductTypeResponse;
 
 namespace ECommerce.ProductServiceAPI.ApplicationService.DTOs.Response.ProductResponse;
 
@@ -12,6 +12,5 @@ public class ProductSearchResponse
     public int Quantity { get; set; }
     public decimal Price { get; set; }
 
-    public int ProductTypeId { get; set; }
-    public ProductTypeSaveRequest Type { get; set; }
+    public ProductTypeSearchResponse ProductType { get; set; }
 }

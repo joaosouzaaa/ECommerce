@@ -2,7 +2,6 @@
 using ECommerce.ShoppingCartServiceAPI.ApplicationService.Request;
 using ECommerce.ShoppingCartServiceAPI.ApplicationService.Response;
 using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Notification;
-using ECommerce.ShoppingCartServiceAPI.RabbitMQSender;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.ShoppingCartServiceAPI.Controllers;
@@ -10,6 +9,7 @@ namespace ECommerce.ShoppingCartServiceAPI.Controllers;
 public class ShoppingCartController : Controller
 {
     private readonly IShoppingCartService _shoppingCartService;
+
 
     public ShoppingCartController(IShoppingCartService shoppingCartService)
     {

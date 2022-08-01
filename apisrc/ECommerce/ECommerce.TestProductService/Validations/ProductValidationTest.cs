@@ -10,34 +10,33 @@ namespace ECommerce.TestProductService.Validations
     {
         private ProductValidation _validate;
 
-
         public static IEnumerable<object[]> DataName =>
-           new List<object[]>
-           {
-                new object[] { new Faker().Commerce.ProductName().ClampLength(0, 1) },
-                new object[] { new Faker().Commerce.ProductName().ClampLength(51, 52) },
-           };
+               new List<object[]>
+               {
+                    new object[] { new Faker().Commerce.ProductName().ClampLength(0, 1) },
+                    new object[] { new Faker().Commerce.ProductName().ClampLength(51, 52) },
+               };
 
         public static IEnumerable<object[]> DataDescription =>
-          new List<object[]>
-          {
-                new object[] { new Faker().Commerce.ProductDescription().ClampLength(0, 1) },
-                new object[] { new Faker().Commerce.ProductName().ClampLength(501) },
-          };
+              new List<object[]>
+              {
+                    new object[] { new Faker().Commerce.ProductDescription().ClampLength(0, 1) },
+                    new object[] { new Faker().Commerce.ProductName().ClampLength(501) },
+              };
 
         public static IEnumerable<object[]> DataOtherDetails =>
-         new List<object[]>
-         {
-                new object[] { new Faker().Commerce.ProductDescription().ClampLength(0, 1) },
-                new object[] { new Faker().Commerce.ProductName().ClampLength(901) },
-         };
+             new List<object[]>
+             {
+                    new object[] { new Faker().Commerce.ProductDescription().ClampLength(0, 1) },
+                    new object[] { new Faker().Commerce.ProductName().ClampLength(901) },
+             };
 
         public static IEnumerable<object[]> DataPrice =>
-         new List<object[]>
-         {
-                new object[] { decimal.Parse(new Faker().Commerce.Price(-1.01m, -0.01m)) },
-                new object[] { decimal.Parse(new Faker().Commerce.Price(0.00m, 0.00m)) },
-         };
+             new List<object[]>
+             {
+                    new object[] { decimal.Parse(new Faker().Commerce.Price(-1.01m, -0.01m)) },
+                    new object[] { decimal.Parse(new Faker().Commerce.Price(0.00m, 0.00m)) },
+             };
 
         public ProductValidationTest()
         {
@@ -48,7 +47,7 @@ namespace ECommerce.TestProductService.Validations
         [Trait("Sucess", "Valid Properties")]
         public async Task ProductValidation_WithValidProperties_ReturnSucess()
         {
-            var product = ProductBuilder.NewObject().DomainBuilder();
+            var product = ProductBuilder.NewObject().DomainBuild();
                     
             var validateResponse = await _validate.ValidationAsync(product);
 
@@ -63,7 +62,7 @@ namespace ECommerce.TestProductService.Validations
         {
             var product = ProductBuilder.NewObject()
                 .WithName(name)
-                .DomainBuilder();
+                .DomainBuild();
 
             var validateResponse = await _validate.ValidationAsync(product);
 
@@ -78,7 +77,7 @@ namespace ECommerce.TestProductService.Validations
         {
             var product = ProductBuilder.NewObject()
                 .WithDescription(description)
-                .DomainBuilder();
+                .DomainBuild();
 
             var validateResponse = await _validate.ValidationAsync(product);
 
@@ -94,7 +93,7 @@ namespace ECommerce.TestProductService.Validations
         {
             var product = ProductBuilder.NewObject()
                 .WithOtherDetails(otherDetails)
-                .DomainBuilder();
+                .DomainBuild();
 
             var validateResponse = await _validate.ValidationAsync(product);
 
@@ -109,7 +108,7 @@ namespace ECommerce.TestProductService.Validations
         {
             var product = ProductBuilder.NewObject()
                 .WithPrice(price)
-                .DomainBuilder();
+                .DomainBuild();
 
             var validateResponse = await _validate.ValidationAsync(product);
 

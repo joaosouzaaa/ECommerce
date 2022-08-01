@@ -2,6 +2,7 @@
 using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductTypeRequest;
 using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Response.ProductTypeResponse;
 using ECommerce.ProductServiceAPI.Domain.Entities;
+using ECommerce.ProductServiceAPI.Domain.Handlers.Pagination;
 
 namespace ECommerce.ProductServiceAPI.ApplicationService.AutoMapperSettings.EntitiesProfile;
 
@@ -20,7 +21,8 @@ public class ProductTypeProfile : Profile
 
 
         CreateMap<ProductType, ProductTypeSearchResponse>()
-            .ForMember(ptr => ptr.Category, map => map.MapFrom(pt => pt.Category))
-            .ReverseMap();
+            .ForMember(ptr => ptr.Category, map => map.MapFrom(pt => pt.Category));
+
+        CreateMap<PageList<ProductType>, PageList<ProductTypeSearchResponse>>();
     }
 }

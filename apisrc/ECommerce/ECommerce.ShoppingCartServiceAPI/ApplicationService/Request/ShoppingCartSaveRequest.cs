@@ -1,6 +1,8 @@
-﻿namespace ECommerce.ShoppingCartServiceAPI.ApplicationService.Request
+﻿using ECommerce.MessageBus.Entities;
+
+namespace ECommerce.ShoppingCartServiceAPI.ApplicationService.Request
 {
-    public class ShoppingCartSaveRequest
+    public class ShoppingCartSaveRequest : BaseMessage
     {
         public List<ProductSaveRequest> ProductsSaveRequest { get; set; }
     }

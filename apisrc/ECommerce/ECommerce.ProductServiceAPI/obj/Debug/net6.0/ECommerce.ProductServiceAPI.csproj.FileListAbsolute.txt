@@ -22,10 +22,13 @@ C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\EComm
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\MySqlConnector.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\RabbitMQ.Client.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.MessageBus.dll
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\bin\Debug\net6.0\ECommerce.MessageBus.pdb
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.csproj.AssemblyReference.cache
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.ProductServiceAPI\obj\Debug\net6.0\ECommerce.ProductServiceAPI.AssemblyInfoInputs.cache

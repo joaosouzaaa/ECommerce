@@ -157,11 +157,6 @@ C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart
 C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.genruntimeconfig.cache
 C:\Users\Joao\source\repos\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ref\ECommerce.TestShoppingCart.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\CoverletSourceRootsMapping
-C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.csproj.AssemblyReference.cache
-C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.AssemblyInfoInputs.cache
-C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.AssemblyInfo.cs
-C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.csproj.CoreCompileInputs.cache
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\testhost.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.deps.json
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.runtimeconfig.json
@@ -308,6 +303,11 @@ C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\EComm
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\ECommerce.ShoppingCartServiceAPI.pdb
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\bin\Debug\net6.0\ECommerce.MessageBus.pdb
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.csproj.AssemblyReference.cache
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.AssemblyInfoInputs.cache
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.AssemblyInfo.cs
+C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.csproj.CoreCompileInputs.cache
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.csproj.CopyComplete
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\ECommerce.TestShoppingCart.dll
 C:\Users\Igor Seven\Documents\MyRepositories\Microservice\ECommerce\apisrc\ECommerce\ECommerce.TestShoppingCart\obj\Debug\net6.0\refint\ECommerce.TestShoppingCart.dll

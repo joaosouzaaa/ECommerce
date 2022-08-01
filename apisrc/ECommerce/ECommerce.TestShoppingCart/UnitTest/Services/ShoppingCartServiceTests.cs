@@ -4,6 +4,7 @@ using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
 using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Notification;
 using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Validation.EntitiesValidation;
 using ECommerce.ShoppingCartServiceAPI.Domain.Interface.RepositoryContract;
+using ECommerce.ShoppingCartServiceAPI.RabbitMQSender;
 using ECommerce.TestShoppingCart.Builders;
 
 namespace ECommerce.TestShoppingCart.UnitTest.Services
@@ -14,13 +15,15 @@ namespace ECommerce.TestShoppingCart.UnitTest.Services
         ShoppingCartValidation _validate;
         NotificationHandler _notification;
         ShoppingCartService _service;
+        Mock<IRabbitMQMessageSender> _rabbitMQ;
 
         public ShoppingCartServiceTests()
         {
             _repository = new Mock<IShoppingCartRepository>();
             _validate = new ShoppingCartValidation();
             _notification = new NotificationHandler();
-            _service = new ShoppingCartService(_repository.Object, _validate, _notification);
+            _rabbitMQ = new Mock<IRabbitMQMessageSender>();
+            _service = new ShoppingCartService(_repository.Object, _validate, _notification, _rabbitMQ.Object);
 
             AutoMapperConfigurations.Inicialize();
         }
