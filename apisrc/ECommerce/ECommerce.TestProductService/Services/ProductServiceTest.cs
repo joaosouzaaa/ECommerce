@@ -1,6 +1,5 @@
 ﻿using ECommerce.ProductServiceAPI.ApplicationService.AutoMapperSettings;
 using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductRequest;
-using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Response.ProductResponse;
 using ECommerce.ProductServiceAPI.ApplicationService.Services;
 using ECommerce.ProductServiceAPI.Domain.Entities;
 using ECommerce.ProductServiceAPI.Domain.Extensions;
@@ -9,7 +8,7 @@ using ECommerce.ProductServiceAPI.Domain.Handlers.Validation.ValidationEntities;
 using ECommerce.ProductServiceAPI.Domain.Interface.RepositoryContract;
 using ECommerce.ProductServiceAPI.RabbitMQSender;
 using ECommerce.TestProductService.Builders;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using Moq;
 using Xunit;
 
@@ -41,8 +40,8 @@ public class ProductServiceTest
 
         var product = dtoSave.MapTo<ProductSaveRequest, Product>();
         _productRepository.Setup(p => p.SaveAsync(It.IsAny<Product>())).Returns(Task.FromResult(true)).Verifiable();
+        
         var result = await _productService.SaveAsync(dtoSave);
-
 
         Assert.True(!_notification.HasNotification());
         Assert.True(result);
@@ -57,6 +56,7 @@ public class ProductServiceTest
         var product = dtoSave.MapTo<ProductSaveRequest, Product>();
         _productRepository.Setup(p => p.HaveObjectInDbAsync(p => p.Name == dtoSave.Name)).Returns(Task.FromResult(true));
         _productRepository.Setup(p => p.SaveAsync(It.IsAny<Product>())).Returns(Task.FromResult(false)).Verifiable();
+        
         var result = await _productService.SaveAsync(dtoSave);
 
         Assert.True(_notification.HasNotification());
@@ -72,8 +72,8 @@ public class ProductServiceTest
         var product = dtoUpdate.MapTo<ProductUpdateRequest, Product>();
         _productRepository.Setup(p => p.FindByAsync(dtoUpdate.ProductId, null, false)).Returns(Task.FromResult(product));
         _productRepository.Setup(p => p.UpdateAsync(It.IsAny<Product>())).Returns(Task.FromResult(true)).Verifiable();
+        
         var result = await _productService.UpdateAsync(dtoUpdate);
-
 
         Assert.True(!_notification.HasNotification());
         Assert.True(result);
@@ -89,8 +89,8 @@ public class ProductServiceTest
         var product = dtoUpdate.MapTo<ProductUpdateRequest, Product>();
         _productRepository.Setup(p => p.FindByAsync(dtoUpdate.ProductId, null, false)).Returns(Task.FromResult<Product>(null));
         _productRepository.Setup(p => p.UpdateAsync(It.IsAny<Product>())).Returns(Task.FromResult(true)).Verifiable();
+       
         var result = await _productService.UpdateAsync(dtoUpdate);
-
 
         Assert.True(_notification.HasNotification());
         Assert.True(!result);
@@ -104,6 +104,7 @@ public class ProductServiceTest
         var id = 10;
         _productRepository.Setup(p => p.HaveObjectInDbAsync(p => p.Id == id)).Returns(Task.FromResult(true));
         _productRepository.Setup(p => p.DeleteAsync(id)).Returns(Task.FromResult(true));
+
         var requestResult = await _productService.DeleteAsync(id);
 
         Assert.True(!_notification.HasNotification());
@@ -119,6 +120,7 @@ public class ProductServiceTest
         var id = 15;
         _productRepository.Setup(p => p.HaveObjectInDbAsync(p => p.Id == id)).Returns(Task.FromResult(false));
         _productRepository.Setup(p => p.DeleteAsync(id)).Returns(Task.FromResult(false));
+
         var requestResult = await _productService.DeleteAsync(id);
 
         Assert.True(_notification.HasNotification());
@@ -131,14 +133,12 @@ public class ProductServiceTest
     [Trait("Category", "FindByAsync success")]
     public async Task ProductServiceExecuteFindByAsyn_SuccessScenario_ReturnObject()
     {
-
-        //refatorar toda logica
         var product = ProductBuilder.NewObject().DomainBuild();
-        _productRepository.Setup(p => p.FindByAsync(product.Id, p => p.Include(p => p.ProductType), false)).Returns(Task.FromResult(product));
+        _productRepository.Setup(p => p.FindByAsync(product.Id, It.IsAny<Func<IQueryable<Product>, IIncludableQueryable<Product, object>>>(), false)).Returns(Task.FromResult(product));
 
         var requestResult = await _productService.FindByAsync(product.Id);
 
-        _productRepository.Verify(r => r.FindByAsync(product.Id, p => p.Include(p => p.ProductType), false), Times.Once());
+        _productRepository.Verify(r => r.FindByAsync(product.Id, It.IsAny<Func<IQueryable<Product>, IIncludableQueryable<Product, object>>>(), false), Times.Once());
         Assert.NotNull(requestResult);
     }
 }

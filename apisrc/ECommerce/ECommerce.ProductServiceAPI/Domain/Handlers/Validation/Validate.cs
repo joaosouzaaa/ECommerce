@@ -13,8 +13,6 @@ public class Validate<TEntity> : AbstractValidator<TEntity>, IValidate<TEntity> 
     private async Task CreateResultAsync(TEntity entity) => this._validationResult = await base.ValidateAsync(entity);
     private Dictionary<string, string> GetErrors() => this._validationResult.Errors.ToDictionary();
 
-
-
     public ValidationResponse Validation(TEntity entity)
     {
         CreateResult(entity);
