@@ -1,7 +1,9 @@
 ﻿using Bogus;
 using Bogus.Extensions;
 using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductRequest;
+using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Response.ProductResponse;
 using ECommerce.ProductServiceAPI.Domain.Entities;
+using ECommerce.ProductServiceAPI.Domain.Handlers.Pagination;
 
 namespace ECommerce.TestProductService.Builders
 {
@@ -37,6 +39,18 @@ namespace ECommerce.TestProductService.Builders
             };
         }
 
+        public PageList<Product> DomainListBuild()
+        {
+            var productList = new List<Product>();
+            productList.Add(DomainBuild());
+            productList.Add(DomainBuild());
+
+            var pageList = new PageList<Product>(productList, productList.Count(), 1, 2);
+
+
+            return pageList;
+        }
+
         public ProductSaveRequest DtoSaveBuild()
         {
             return new ProductSaveRequest
@@ -64,6 +78,33 @@ namespace ECommerce.TestProductService.Builders
                 Price = _price,
                 ProductType = ProductTypeBuilder.NewObject().DtoUpdateBuild()
             };
+        }
+
+        public ProductSearchResponse DtoSearchResponseBuild()
+        {
+            return new ProductSearchResponse
+            {
+                ProductId = _productId,
+                Image = _image,
+                Name = _name,
+                Description = _description,
+                OtherDetails = _otherDetails,
+                Quantity = _quantity,
+                Price = _price,
+                ProductType = ProductTypeBuilder.NewObject().DtoSearchResponseBuild()
+            };
+        }
+
+        public PageList<ProductSearchResponse> DtoListSearchResponseBuild()
+        {
+            var productList = new List<ProductSearchResponse>();
+            productList.Add(DtoSearchResponseBuild());
+            productList.Add(DtoSearchResponseBuild());
+
+            var pageList = new PageList<ProductSearchResponse>(productList, productList.Count(), 1, 2);
+
+
+            return pageList;
         }
 
         public ProductBuilder WithName(string name)

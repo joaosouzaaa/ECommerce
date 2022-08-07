@@ -13,7 +13,7 @@ namespace ECommerce.TestProductService.Notifications
         }
 
         [Fact( DisplayName = "Notification")]
-        [Trait("Sucess", "New Notification")]
+        [Trait("Execute method", "New Notification")]
         public async void NotificationHandle_CreateNewNotification_ReturnHasNotificationTrue()
         {
             _notificationHandler.AddNotification("Teste", "Nova notificação");
@@ -22,7 +22,7 @@ namespace ECommerce.TestProductService.Notifications
         }
 
         [Fact(DisplayName = "Notification")]
-        [Trait("Sucess", "New Notification with bool returns")]
+        [Trait("Execute method", "New Notification with bool returns")]
         public async void NotificationHandler_CreateNewNotificationWithBoolReturn_ReturnHasNotificationTrue()
         {
             var hasnotification = _notificationHandler.AddNotification(new DomainNotification("Teste", "Nova notificação"));
@@ -32,7 +32,7 @@ namespace ECommerce.TestProductService.Notifications
         }
 
         [Fact(DisplayName = "Notification")]
-        [Trait("Sucess", "New Notification List")]
+        [Trait("Execute method", "New Notification List")]
         public async void NotificationHandler_CreateIEnumerableNotification_ReturnHasNotificationTrue()
         {
 
@@ -48,7 +48,7 @@ namespace ECommerce.TestProductService.Notifications
         }
 
         [Fact(DisplayName = "Notification")]
-        [Trait("Sucess", "New Notification Dictionary")]
+        [Trait("Execute method", "New Notification Dictionary")]
         public async void NotificationHandler_CreateDictionaryNotification_ReturnHasNotificationTrue()
         {
             var notifications = new Dictionary<string, string>();

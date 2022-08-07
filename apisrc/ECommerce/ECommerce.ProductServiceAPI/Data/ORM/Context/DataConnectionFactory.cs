@@ -19,9 +19,9 @@ namespace ECommerce.ProductServiceAPI.Data.ORM.Context
                     ? _configurationApplication.ConnectionDeveloper
                     : _configurationApplication.ConnectionProduction;
             }
-            catch (Exception exception)
+            catch (Exception)
             {
-                throw exception;
+                throw;
             }
         }
     }

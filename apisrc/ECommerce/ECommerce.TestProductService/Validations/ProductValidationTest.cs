@@ -44,7 +44,7 @@ namespace ECommerce.TestProductService.Validations
         }
 
         [Fact(DisplayName = "Product Validation")]
-        [Trait("Sucess", "Valid Properties")]
+        [Trait("Object Validate", "Valid Properties")]
         public async Task ProductValidation_WithValidProperties_ReturnSucess()
         {
             var product = ProductBuilder.NewObject().DomainBuild();
@@ -57,7 +57,7 @@ namespace ECommerce.TestProductService.Validations
 
         [Theory(DisplayName = "Product Validation")]
         [MemberData(nameof(DataName))]
-        [Trait("Fail", "Invalid Name")]
+        [Trait("Object Validate", "Invalid Name")]
         public async Task ProductValidation_WithInvalidPropertyName_ReturnFail(string name)
         {
             var product = ProductBuilder.NewObject()
@@ -72,7 +72,7 @@ namespace ECommerce.TestProductService.Validations
 
         [Theory(DisplayName = "Product Validation")]
         [MemberData(nameof(DataDescription))]
-        [Trait("Fail", "Invalid Description")]
+        [Trait("Object Validate", "Invalid Description")]
         public async Task ProductValidation_WithInvalidPropertyDescription_ReturnFail(string description)
         {
             var product = ProductBuilder.NewObject()
@@ -85,10 +85,9 @@ namespace ECommerce.TestProductService.Validations
             Assert.True(!validateResponse.Valid);
         }
 
-
         [Theory(DisplayName = "Product Validation")]
         [MemberData(nameof(DataOtherDetails))]
-        [Trait("Fail", "Invalid OtherDetails")]
+        [Trait("Object Validate", "Invalid OtherDetails")]
         public async Task ProductValidation_WithInvalidPropertyOtherDetails_ReturnFail(string otherDetails)
         {
             var product = ProductBuilder.NewObject()
@@ -103,7 +102,7 @@ namespace ECommerce.TestProductService.Validations
 
         [Theory(DisplayName = "Product Validation")]
         [MemberData(nameof(DataPrice))]
-        [Trait("Fail", "Invalid Price")]
+        [Trait("Object Validate", "Invalid Price")]
         public async Task ProductValidation_WithInvalidPropertyPrice_ReturnFail(decimal price)
         {
             var product = ProductBuilder.NewObject()

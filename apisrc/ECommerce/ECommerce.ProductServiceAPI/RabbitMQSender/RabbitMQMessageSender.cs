@@ -41,7 +41,7 @@ public class RabbitMQMessageSender : IRabbitMQMessageSender
     private byte[] GetMessageAsByteArray(BaseMessage message)
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
-        var json = JsonSerializer.Serialize<ProductSaveRequest>((ProductSaveRequest)message, options);
+        var json = JsonSerializer.Serialize<dynamic>(message, options);
 
         return Encoding.UTF8.GetBytes(json);
     }

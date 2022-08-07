@@ -11,5 +11,6 @@ public static class OthersDependencyInjection
     {
         service.AddScoped<INotificationHandler, NotificationHandler>();
         service.AddScoped<IRabbitMQMessageSender, RabbitMQMessageSender>();
+        service.AddScoped<IUnitOfWork, UnitOfWork>();
     }
 }

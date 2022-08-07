@@ -16,6 +16,7 @@ public class ProductTypeProfile : Profile
         
         
         CreateMap<ProductType, ProductTypeUpdateRequest>()
+            .ForMember(ptr => ptr.ProductTypeId, map => map.MapFrom(pt => pt.Id))
             .ForMember(ptr => ptr.Category, map => map.MapFrom(pt => pt.Category))
             .ReverseMap();
 

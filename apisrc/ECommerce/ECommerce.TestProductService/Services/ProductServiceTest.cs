@@ -4,11 +4,12 @@ using ECommerce.ProductServiceAPI.ApplicationService.Services;
 using ECommerce.ProductServiceAPI.Domain.Entities;
 using ECommerce.ProductServiceAPI.Domain.Extensions;
 using ECommerce.ProductServiceAPI.Domain.Handlers.Notification;
+using ECommerce.ProductServiceAPI.Domain.Handlers.Pagination;
 using ECommerce.ProductServiceAPI.Domain.Handlers.Validation.ValidationEntities;
 using ECommerce.ProductServiceAPI.Domain.Interface.RepositoryContract;
 using ECommerce.ProductServiceAPI.RabbitMQSender;
 using ECommerce.TestProductService.Builders;
-using Microsoft.EntityFrameworkCore.Query;
+using ECommerce.TestProductService.Builders.Util;
 using Moq;
 using Xunit;
 
@@ -60,7 +61,7 @@ public class ProductServiceTest
         var result = await _productService.SaveAsync(dtoSave);
 
         Assert.True(_notification.HasNotification());
-        Assert.True(!result);
+        Assert.False(result);
         _productRepository.Verify(p => p.SaveAsync(It.IsAny<Product>()), Times.Never);
     }
 
@@ -71,7 +72,7 @@ public class ProductServiceTest
         var dtoUpdate = ProductBuilder.NewObject().DtoUpdateBuild();
         var product = dtoUpdate.MapTo<ProductUpdateRequest, Product>();
         _productRepository.Setup(p => p.FindByAsync(dtoUpdate.ProductId, null, false)).Returns(Task.FromResult(product));
-        _productRepository.Setup(p => p.UpdateAsync(It.IsAny<Product>())).Returns(Task.FromResult(true)).Verifiable();
+        _productRepository.Setup(p => p.UpdateAsync(It.IsAny<Product>())).Returns(Task.FromResult(true));
         
         var result = await _productService.UpdateAsync(dtoUpdate);
 
@@ -134,11 +135,26 @@ public class ProductServiceTest
     public async Task ProductServiceExecuteFindByAsyn_SuccessScenario_ReturnObject()
     {
         var product = ProductBuilder.NewObject().DomainBuild();
-        _productRepository.Setup(p => p.FindByAsync(product.Id, It.IsAny<Func<IQueryable<Product>, IIncludableQueryable<Product, object>>>(), false)).Returns(Task.FromResult(product));
+        _productRepository.Setup(p => p.FindByAsync(product.Id, UtilTools.CreareFuncQueryable<Product>(), false)).Returns(Task.FromResult(product));
 
         var requestResult = await _productService.FindByAsync(product.Id);
 
-        _productRepository.Verify(r => r.FindByAsync(product.Id, It.IsAny<Func<IQueryable<Product>, IIncludableQueryable<Product, object>>>(), false), Times.Once());
+        _productRepository.Verify(r => r.FindByAsync(product.Id, UtilTools.CreareFuncQueryable<Product>(), false), Times.Once());
         Assert.NotNull(requestResult);
+    }
+
+
+    [Fact(DisplayName = "ProductService")]
+    [Trait("Category", "FindByAsync success")]
+    public async Task ProductServiceExecuteFindByWithPagination_SuccessScenario_ReturnObjects()
+    {
+        var pageParams = PageParamsBuilder.NewObject().DomainBuild();
+        var responses = ProductBuilder.NewObject().DomainListBuild();
+        _productRepository.Setup(p => p.FindWithEntitiesPaging(pageParams, UtilTools.CreareFuncQueryable<Product>(), false)).Returns(Task.FromResult<PageList<Product>>(responses));
+
+        var requestResult = await _productService.FindByWithPagination(pageParams);
+
+        _productRepository.Verify(r => r.FindWithEntitiesPaging(pageParams, UtilTools.CreareFuncQueryable<Product>(), false), Times.Once());
+        Assert.True(requestResult.Result.Any());
     }
 }

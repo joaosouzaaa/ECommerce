@@ -1,4 +1,5 @@
-﻿using ECommerce.ProductServiceAPI.Domain.Interface;
+﻿using ECommerce.ProductServiceAPI.Data.ORM.Context;
+using ECommerce.ProductServiceAPI.Domain.Interface;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
@@ -8,7 +9,7 @@ namespace ECommerce.ProductServiceAPI.Data.ORM.Uow
     {
         private DatabaseFacade _database;
 
-        public UnitOfWork(DbContext context)
+        public UnitOfWork(ProductMySqlContext context)
         {
             this._database = context.Database;
         }
