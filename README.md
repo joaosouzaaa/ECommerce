@@ -12,7 +12,11 @@ Front-end made in React.
 
 # Frontend
 
-- React 18
+- React 18 / typescript
 - Advanced Hooks
 - Custom Hooks
 - Material UI
+- Redux
+- Clean Code
+- Api rest
+
