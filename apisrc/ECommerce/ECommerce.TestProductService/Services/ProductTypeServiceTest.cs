@@ -1,5 +1,4 @@
-﻿using ECommerce.MessageBus.Entities;
-using ECommerce.ProductServiceAPI.ApplicationService.AutoMapperSettings;
+﻿using ECommerce.ProductServiceAPI.ApplicationService.AutoMapperSettings;
 using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductTypeRequest;
 using ECommerce.ProductServiceAPI.ApplicationService.Services;
 using ECommerce.ProductServiceAPI.Domain.Entities;
@@ -9,13 +8,7 @@ using ECommerce.ProductServiceAPI.Domain.Handlers.Validation.ValidationEntities;
 using ECommerce.ProductServiceAPI.Domain.Interface.RepositoryContract;
 using ECommerce.ProductServiceAPI.RabbitMQSender;
 using ECommerce.TestProductService.Builders;
-using ECommerce.TestProductService.Builders.Util;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace ECommerce.TestProductService.Services
@@ -104,6 +97,37 @@ namespace ECommerce.TestProductService.Services
             Assert.False(serviceResult);
             _productTypeRepository.Verify(pt => pt.FindByAsync(dtoUpdate.ProductTypeId, null, false), Times.Once);
             _productTypeRepository.Verify(pt => pt.UpdateAsync(It.IsAny<ProductType>()), Times.Never);
+        }
+
+
+        [Fact(DisplayName = "ProductTypeService")]
+        [Trait("Execute method", "DeleteAsync success")]
+        public async Task ProductTypeServiceExecuteDeleteAsync_SucessScenario_ReturnTrue()
+        {
+            var productType = 10;
+            _productTypeRepository.Setup(pt => pt.HaveObjectInDbAsync(pt => pt.Id == productType)).Returns(Task.FromResult(true));
+            _productTypeRepository.Setup(pt => pt.DeleteAsync(productType)).Returns(Task.FromResult(true));
+
+            var serviceResult = await _productTypeService.DeleteAsync(productType);
+
+            Assert.True(serviceResult);
+            _productTypeRepository.Verify(pt => pt.HaveObjectInDbAsync(pt => pt.Id == productType), Times.Once);
+            _productTypeRepository.Verify(pt => pt.DeleteAsync(productType), Times.Once);
+        }
+
+        [Fact(DisplayName = "ProductTypeService")]
+        [Trait("Execute method", "DeleteAsync failed")]
+        public async Task ProductTypeServiceExecuteDeleteAsync_NotFoundProductType_ReturnTrue()
+        {
+            var productType = 10;
+            _productTypeRepository.Setup(pt => pt.HaveObjectInDbAsync(pt => pt.Id == productType)).Returns(Task.FromResult(false));
+            _productTypeRepository.Setup(pt => pt.DeleteAsync(productType)).Returns(Task.FromResult(false));
+
+            var serviceResult = await _productTypeService.DeleteAsync(productType);
+
+            Assert.False(serviceResult);
+            _productTypeRepository.Verify(pt => pt.HaveObjectInDbAsync(pt => pt.Id == productType), Times.Once);
+            _productTypeRepository.Verify(pt => pt.DeleteAsync(productType), Times.Never);
         }
     }
 }

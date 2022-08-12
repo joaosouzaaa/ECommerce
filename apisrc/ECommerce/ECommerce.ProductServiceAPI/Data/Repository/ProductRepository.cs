@@ -34,22 +34,7 @@ public class ProductRepository : IProductRepository
 
     public void Dispose() => _context.Dispose();
 
-    private IQueryable<Product> IncludeMultiple( Func<IQueryable<Product>, IIncludableQueryable<Product, object>> include = null, bool asNoTracking = false)
-    {
-        var query = (IQueryable<Product>)_dbSet;
-
-        if (asNoTracking)
-            query.AsNoTracking();
-
-        if (include != null)
-            query = include(query);
-
-        return query;
-    }
-
     private async Task<bool> SaveDbAsync() => (await _context.SaveChangesAsync()) > 0;
-
-
 
     public async Task<bool> SaveAsync(Product entity)
     {
@@ -73,6 +58,16 @@ public class ProductRepository : IProductRepository
         return await SaveDbAsync();
     }
 
-   
-   
+    private IQueryable<Product> IncludeMultiple(Func<IQueryable<Product>, IIncludableQueryable<Product, object>> include = null, bool asNoTracking = false)
+    {
+        var query = (IQueryable<Product>)_dbSet;
+
+        if (asNoTracking)
+            query = _dbSet.AsNoTracking();
+
+        if (include != null)
+            query = include(query);
+
+        return query;
+    }
 }
