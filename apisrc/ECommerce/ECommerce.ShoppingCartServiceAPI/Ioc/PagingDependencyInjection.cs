@@ -7,7 +7,7 @@ namespace ECommerce.ShoppingCartServiceAPI.Ioc
     {
         public static void AddPagingDependencyInjection(this IServiceCollection services)
         {
-            services.AddScoped<IPagingService<ShoppingCart>>();
+            services.AddScoped<IPagingService<ShoppingCartDatail>>();
         }
     }
 }

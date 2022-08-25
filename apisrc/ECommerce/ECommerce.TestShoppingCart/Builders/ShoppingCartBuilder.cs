@@ -16,17 +16,17 @@ namespace ECommerce.TestShoppingCart.Builders
             return new ShoppingCartBuilder();
         }
 
-        public ShoppingCart DomainBuilder()
+        public ShoppingCartDatail DomainBuilder()
         {
             var productList = new List<Product>();
             productList.Add(ProductBuilder.NewObject().DomainBuilder());
 
-            return new ShoppingCart
+            return new ShoppingCartDatail
             {
                 Id = Guid.NewGuid().ToString(),
                 TotalItens = _totalItens,
                 TotalPrice = _totalPrice,
-                Products = productList
+                Product = productList
             };
         }
 

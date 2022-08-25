@@ -11,5 +11,4 @@ public class Product : BaseEntity
 
     public int ProductTypeId { get; set; }
     public ProductType ProductType { get; set; }
-
 }

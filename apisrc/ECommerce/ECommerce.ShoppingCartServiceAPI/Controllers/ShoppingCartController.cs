@@ -1,7 +1,7 @@
-﻿using ECommerce.ShoppingCartServiceAPI.ApplicationService.Interfaces.ShoppingCart;
-using ECommerce.ShoppingCartServiceAPI.ApplicationService.Request;
+﻿using ECommerce.ShoppingCartServiceAPI.ApplicationService.Request;
 using ECommerce.ShoppingCartServiceAPI.ApplicationService.Response;
 using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Notification;
+using ECommerce.ShoppingCartServiceAPI.Domain.Interface.ServiceContract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.ShoppingCartServiceAPI.Controllers;

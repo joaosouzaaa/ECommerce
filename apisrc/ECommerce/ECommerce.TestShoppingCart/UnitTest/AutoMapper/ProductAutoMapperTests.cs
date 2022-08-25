@@ -25,7 +25,7 @@ namespace ECommerce.TestShoppingCart.UnitTest.AutoMapper
             Assert.Equal(productSaveRequest.Name, Product.Name);
             Assert.Equal(productSaveRequest.Description, Product.Description);
             Assert.Equal(productSaveRequest.OtherDetails, Product.OtherDetails);
-            Assert.Equal(productSaveRequest.Quantity, Product.Quantity);
+            Assert.Equal(productSaveRequest.Quantity, Product.Amount);
             Assert.Equal(productSaveRequest.Price, Product.Price);
         }
 
@@ -39,7 +39,7 @@ namespace ECommerce.TestShoppingCart.UnitTest.AutoMapper
             Assert.Equal(productResponse.Name, Product.Name);
             Assert.Equal(productResponse.Description, Product.Description);
             Assert.Equal(productResponse.OtherDetails, Product.OtherDetails);
-            Assert.Equal(productResponse.Quantity, Product.Quantity);
+            Assert.Equal(productResponse.Quantity, Product.Amount);
             Assert.Equal(productResponse.Price, Product.Price);
         }
     }

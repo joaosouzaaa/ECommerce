@@ -1,7 +1,7 @@
-﻿using ECommerce.ShoppingCartServiceAPI.ApplicationService.Interfaces.ShoppingCart;
-using ECommerce.ShoppingCartServiceAPI.ApplicationService.Request;
+﻿using ECommerce.ShoppingCartServiceAPI.ApplicationService.Request;
 using ECommerce.ShoppingCartServiceAPI.ApplicationService.Response;
 using ECommerce.ShoppingCartServiceAPI.Controllers;
+using ECommerce.ShoppingCartServiceAPI.Domain.Interface.ServiceContract;
 using ECommerce.TestShoppingCart.Builders;
 
 namespace ECommerce.TestShoppingCart.UnitTest.Controller

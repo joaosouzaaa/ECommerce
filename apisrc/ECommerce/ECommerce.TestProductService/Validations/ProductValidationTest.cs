@@ -14,7 +14,7 @@ namespace ECommerce.TestProductService.Validations
                new List<object[]>
                {
                     new object[] { new Faker().Commerce.ProductName().ClampLength(0, 1) },
-                    new object[] { new Faker().Commerce.ProductName().ClampLength(51, 52) },
+                    new object[] { new Faker().Commerce.ProductName().ClampLength(51) },
                };
 
         public static IEnumerable<object[]> DataDescription =>

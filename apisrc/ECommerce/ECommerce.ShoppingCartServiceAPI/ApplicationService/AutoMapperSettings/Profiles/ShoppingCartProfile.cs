@@ -9,12 +9,12 @@ namespace ECommerce.ShoppingCartServiceAPI.ApplicationService.AutoMapperSettings
     {
         public ShoppingCartProfile()
         {
-            CreateMap<ShoppingCart, ShoppingCartSaveRequest>()
-                .ForMember(sr => sr.ProductsSaveRequest, map => map.MapFrom(s => s.Products))
+            CreateMap<ShoppingCartDatail, ShoppingCartSaveRequest>()
+                .ForMember(sr => sr.ProductsSaveRequest, map => map.MapFrom(s => s.Product))
                 .ReverseMap();
 
-            CreateMap<ShoppingCart, ShoppingCartResponse>()
-                .ForMember(sr => sr.ProductsResponse, map => map.MapFrom(s => s.Products))
+            CreateMap<ShoppingCartDatail, ShoppingCartResponse>()
+                .ForMember(sr => sr.ProductsResponse, map => map.MapFrom(s => s.Product))
                 .ReverseMap();
         }
     }

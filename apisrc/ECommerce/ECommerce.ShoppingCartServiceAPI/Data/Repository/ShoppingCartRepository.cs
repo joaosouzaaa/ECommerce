@@ -1,52 +1,49 @@
-﻿using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
+﻿using ECommerce.ShoppingCartServiceAPI.Data.ORM.Context;
+using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
 using ECommerce.ShoppingCartServiceAPI.Domain.Interface.RepositoryContract;
-using Microsoft.Extensions.Caching.Distributed;
-using System.Text;
-using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace ECommerce.ShoppingCartServiceAPI.Data.Repository;
 
 public class ShoppingCartRepository : IShoppingCartRepository
 {
-    private readonly IDistributedCache _cache;
+    private readonly ShoppingCartContext _context;
+    private DbSet<ShoppingCartHeader> _dbSet => _context.Set<ShoppingCartHeader>();
 
-    public ShoppingCartRepository(IDistributedCache cache)
+    public ShoppingCartRepository(ShoppingCartContext context)
     {
-        _cache = cache;
+        _context = context;
     }
 
+    public void Dispose() => _context.Dispose();
 
-    public async Task SetAsync(ShoppingCart shoppingCart)
+    private async Task<bool> CommitInDbAsync() => await _context.SaveChangesAsync() > 0;
+
+    public async Task<ShoppingCartHeader> FindByAsync(int id, Func<IQueryable<ShoppingCartHeader>, IIncludableQueryable<ShoppingCartHeader, object>> include = null, bool asNotracking = false)
     {
-        var key = shoppingCart.Id;
-        var jsonData = JsonSerializer.Serialize(shoppingCart);
-        var dataInByteArray = Encoding.UTF8.GetBytes(jsonData);
+        var query = (IQueryable<ShoppingCartHeader>)_dbSet;
 
-        await _cache.SetAsync(key, dataInByteArray);
+        if (asNotracking)
+            query = (IQueryable<ShoppingCartHeader>)_dbSet;
+
+        if (include != null) 
+            query = include(query);
+            
+        return await query.FirstOrDefaultAsync(sc => sc.Id == id);
     }
 
-    public async Task<ShoppingCart> GetAsync(string key)
+    public async Task<bool> SaveAsync(ShoppingCartHeader entity)
     {
-        var cachedData = await _cache.GetAsync(key);
+        await _dbSet.AddAsync(entity);
 
-        if (cachedData != null)
-        {
-            var shoppingCart = new ShoppingCart();
-            var cachedDataString = Encoding.UTF8.GetString(cachedData);
-            shoppingCart = JsonSerializer.Deserialize<ShoppingCart>(cachedDataString);
-
-            return shoppingCart;
-        }
-
-        return null;
+        return await CommitInDbAsync();
     }
 
-    public async Task RemoveAsync(string key) =>
-        await _cache.RemoveAsync(key);
+    public async Task<bool> UpdateAsync(ShoppingCartHeader entity)
+    {
+        _context.Entry(entity).State = EntityState.Modified;
 
-    public async Task RefreshAsync(string key) =>
-        await _cache.RefreshAsync(key);
-
-    public async Task<string> GetStringAsync(string key) =>
-        await _cache.GetStringAsync(key);
+        return await CommitInDbAsync();
+    }
 }

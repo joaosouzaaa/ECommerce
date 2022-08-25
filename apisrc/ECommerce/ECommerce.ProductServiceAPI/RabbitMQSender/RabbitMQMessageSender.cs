@@ -1,5 +1,4 @@
 ﻿using ECommerce.MessageBus.Entities;
-using ECommerce.ProductServiceAPI.ApplicationService.DTOs.Request.ProductRequest;
 using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;

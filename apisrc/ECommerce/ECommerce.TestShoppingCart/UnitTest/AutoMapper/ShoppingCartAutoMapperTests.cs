@@ -9,7 +9,7 @@ namespace ECommerce.TestShoppingCart.UnitTest.AutoMapper
 {
     public class ShoppingCartAutoMapperTests
     {
-        public ShoppingCart ShoppingCart = ShoppingCartBuilder.NewObject().DomainBuilder();
+        public ShoppingCartDatail ShoppingCart = ShoppingCartBuilder.NewObject().DomainBuilder();
 
         public ShoppingCartAutoMapperTests()
         {
@@ -19,20 +19,20 @@ namespace ECommerce.TestShoppingCart.UnitTest.AutoMapper
         [Fact]
         public void ShoppingCart_To_ShoppingCartSaveRequest()
         {
-            var shoppingCartSaveRequest = ShoppingCart.MapTo<ShoppingCart, ShoppingCartSaveRequest>();
+            var shoppingCartSaveRequest = ShoppingCart.MapTo<ShoppingCartDatail, ShoppingCartSaveRequest>();
 
-            Assert.Equal(shoppingCartSaveRequest.ProductsSaveRequest.Count, ShoppingCart.Products.Count);
+            Assert.Equal(shoppingCartSaveRequest.ProductsSaveRequest.Count, ShoppingCart.Product.Count);
         }
 
         [Fact]
         public void ShoppingCart_To_ShoppingCartResponse()
         {
-            var shoppingCartResponse = ShoppingCart.MapTo<ShoppingCart, ShoppingCartResponse>();
+            var shoppingCartResponse = ShoppingCart.MapTo<ShoppingCartDatail, ShoppingCartResponse>();
 
             Assert.Equal(shoppingCartResponse.Id, ShoppingCart.Id);
             Assert.Equal(shoppingCartResponse.TotalPrice, ShoppingCart.TotalPrice);
             Assert.Equal(shoppingCartResponse.TotalItens, ShoppingCart.TotalItens);
-            Assert.Equal(shoppingCartResponse.ProductsResponse.Count, ShoppingCart.Products.Count);
+            Assert.Equal(shoppingCartResponse.ProductsResponse.Count, ShoppingCart.Product.Count);
         }
     }
 }

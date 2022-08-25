@@ -33,14 +33,14 @@ namespace ECommerce.ProductServiceAPI.ApplicationService.Services
 
         public async Task<ProductSearchResponse> FindByAsync(int id)
         {
-            var product = await _productRepository.FindByAsync(id,  p => p.Include(p => p.ProductType), false);
+            var product = await _productRepository.FindByAsync(id,  p => p.Include(p => p.ProductType), true);
                 
             return product.MapTo<Product, ProductSearchResponse>();
         }
 
         public async Task<PageList<ProductSearchResponse>> FindByWithPagination(PageParams pageParams)
         {
-            var products = await _productRepository.FindWithEntitiesPaging(pageParams, p => p.Include(p => p.ProductType));
+            var products = await _productRepository.FindWithEntitiesPaging(pageParams, p => p.Include(p => p.ProductType), true);
 
             return products.MapTo<PageList<Product>, PageList<ProductSearchResponse>>();
         }

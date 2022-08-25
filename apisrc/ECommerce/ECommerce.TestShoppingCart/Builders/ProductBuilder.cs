@@ -27,7 +27,7 @@ namespace ECommerce.TestShoppingCart.Builders
                 Name = _name,
                 Description = _description,
                 OtherDetails = _otherDetails,
-                Quantity = _quantity,
+                Amount = _quantity,
                 Price = _price,
                 Image = _image
             };

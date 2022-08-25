@@ -32,11 +32,11 @@ namespace ECommerce.TestShoppingCart.UnitTest.Services
         public async Task SetAsync_ReturnsTrue()
         {
             var saveRequest = ShoppingCartBuilder.NewObject().SaveRequestBuilder();
-            _repository.Setup(r => r.SetAsync(It.IsAny<ShoppingCart>())).Returns(Task.FromResult(true));
+            _repository.Setup(r => r.SetAsync(It.IsAny<ShoppingCartDatail>())).Returns(Task.FromResult(true));
 
             var serviceResult = await _service.SetAsync(saveRequest);
 
-            _repository.Verify(r => r.SetAsync(It.IsAny<ShoppingCart>()), Times.Once());
+            _repository.Verify(r => r.SetAsync(It.IsAny<ShoppingCartDatail>()), Times.Once());
             Assert.True(serviceResult);
         }
 
@@ -44,11 +44,11 @@ namespace ECommerce.TestShoppingCart.UnitTest.Services
         public async Task SetAsync_ReturnsFalse()
         {
             var saveRequest = ShoppingCartBuilder.NewObject().SaveRequestBuilder();
-            _repository.Setup(r => r.SetAsync(It.IsAny<ShoppingCart>())).Returns(Task.FromResult(false));
+            _repository.Setup(r => r.SetAsync(It.IsAny<ShoppingCartDatail>())).Returns(Task.FromResult(false));
 
             var serviceResult = await _service.SetAsync(saveRequest);
 
-            _repository.Verify(r => r.SetAsync(It.IsAny<ShoppingCart>()), Times.Once());
+            _repository.Verify(r => r.SetAsync(It.IsAny<ShoppingCartDatail>()), Times.Once());
             Assert.False(serviceResult);
         }
 
@@ -57,7 +57,7 @@ namespace ECommerce.TestShoppingCart.UnitTest.Services
         {
             var key = Guid.NewGuid().ToString();
             var response = ShoppingCartBuilder.NewObject().ResponseBuilder();
-            _repository.Setup(r => r.GetAsync(key)).Returns(Task.FromResult(It.IsAny<ShoppingCart>()));
+            _repository.Setup(r => r.GetAsync(key)).Returns(Task.FromResult(It.IsAny<ShoppingCartDatail>()));
 
             var serviceResult = await _service.GetAsync(key);
 

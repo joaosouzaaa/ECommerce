@@ -1,12 +1,16 @@
-﻿using ECommerce.ShoppingCartServiceAPI.Data.ORM.Context;
+﻿using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
 using ECommerce.ShoppingCartServiceAPI.Domain.Provider;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Distributed;
 
 namespace ECommerce.ShoppingCartServiceAPI.Data.ORM.Context;
 
 public class ShoppingCartContext : BaseDbContext
 {
+    DbSet<Product> Products { get; set; }
+    DbSet<ShoppingCartHeader> ShoppingCarts { get; set; }
+    DbSet<Customer> Customers { get; set; }
+    DbSet<CardPayment> CardPayments { get; set; }
+
     public ShoppingCartContext(ConfigurationApplication configurationApplication) : base(configurationApplication)
     {
     }

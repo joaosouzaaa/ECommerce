@@ -21,9 +21,9 @@ public class DataConnectionFactory
                 ? _configurationApplication.ConnectionDeveloper
                 : _configurationApplication.ConnectionProduction;
         }
-        catch (Exception exception)
+        catch (Exception)
         {
-            throw exception;
+            throw;
         }
     }
 }
