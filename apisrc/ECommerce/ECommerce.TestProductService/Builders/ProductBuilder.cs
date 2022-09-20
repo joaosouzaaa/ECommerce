@@ -31,7 +31,7 @@ namespace ECommerce.TestProductService.Builders
                 Name = _name,
                 Description = _description,
                 OtherDetails = _otherDetails,
-                Quantity = _quantity,
+                Amount = _quantity,
                 Price = _price,
                 ProductType = _productType,
                 CreateDate = DateTime.Now,

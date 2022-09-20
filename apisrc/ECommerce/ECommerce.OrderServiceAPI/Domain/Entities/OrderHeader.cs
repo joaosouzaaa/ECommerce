@@ -12,5 +12,5 @@ public class OrderHeader : BaseEntity
 
     public CustomerVO Customer { get; set; }
     public CardPaymentVO CardPayment { get; set; }
-    public List<OrderDetail> OrderDetails { get; set; }
+    public List<Product> OrderDetails { get; set; }
 }

@@ -1,6 +1,6 @@
 ﻿using ECommerce.MessageBus.Entities;
-using ECommerce.ShoppingCartServiceAPI.ApplicationService.DTOs.Request.MessageRequest;
 using ECommerce.ShoppingCartServiceAPI.ApplicationService.DTOs.Request.ValueObjectRequest;
+using ECommerce.ShoppingCartServiceAPI.ApplicationService.Response;
 
 namespace ECommerce.ShoppingCartServiceAPI.ApplicationService.Request.MessageRequest;
 
@@ -15,5 +15,5 @@ public class CheckoutHeaderRequest : BaseMessage
 
     public CustomerVORequest Customer { get; set; }
     public CardPaymentVORequest CardPayment { get; set; }
-    public IEnumerable<CartDatailRequest> CartDatail { get; set; }
+    public List<ProductResponse> Products { get; set; }
 }

@@ -7,7 +7,7 @@ namespace ECommerce.OrderServiceAPI.Data.ORM.Context;
 
 public class OrderSqlServerContext : BaseDbContext
 {
-    public DbSet<OrderDetail> OrderDetails { get; set; }
+    public DbSet<Product> OrderDetails { get; set; }
     public DbSet<OrderHeader> OrderHeaders { get; set; }
 
     public OrderSqlServerContext(ConfigurationApplication configurationApplication)
@@ -36,15 +36,6 @@ public class OrderSqlServerContext : BaseDbContext
                 entry.Property("UpdateDate").CurrentValue = DateTime.Now;
             }
         }
-
-        //foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType()
-        //    .GetProperty("UpdateDate") != null))
-        //{
-        //    if (entry.State == EntityState.Modified)
-        //    {
-        //        entry.Property("UpdateDate").CurrentValue = DateTime.Now;
-        //    }
-        //}
 
         return base.SaveChangesAsync(cancellation);
     }

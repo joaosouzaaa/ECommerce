@@ -24,7 +24,7 @@ public class ProductMapping : IEntityTypeConfiguration<Product>
         builder.Property(p => p.OtherDetails).HasColumnType("varchar(900)").IsUnicode()
             .HasColumnName("product_other_datails").IsRequired();
 
-        builder.Property(p => p.Quantity).HasColumnType("int")
+        builder.Property(p => p.Amount).HasColumnType("int")
             .HasColumnName("product_quantity").IsRequired();
 
         builder.Property(p => p.Price).HasColumnType("decimal").HasPrecision(12, 2)

@@ -11,7 +11,8 @@ public class ShoppingCartContext : BaseDbContext
     DbSet<Customer> Customers { get; set; }
     DbSet<CardPayment> CardPayments { get; set; }
 
-    public ShoppingCartContext(ConfigurationApplication configurationApplication) : base(configurationApplication)
+    public ShoppingCartContext(ConfigurationApplication configurationApplication) 
+        : base(configurationApplication)
     {
     }
 
@@ -19,5 +20,24 @@ public class ShoppingCartContext : BaseDbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ShoppingCartContext).Assembly);
+    }
+
+    public override Task<int> SaveChangesAsync(CancellationToken cancellation = new CancellationToken())
+    {
+        foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType()
+            .GetProperty("CreateDate") != null))
+        {
+            if (entry.State == EntityState.Added)
+            {
+                entry.Property("CreateDate").CurrentValue = DateTime.Now;
+            }
+
+            if (entry.State == EntityState.Modified)
+            {
+                entry.Property("UpdateDate").CurrentValue = DateTime.Now;
+            }
+        }
+
+        return base.SaveChangesAsync(cancellation);
     }
 }

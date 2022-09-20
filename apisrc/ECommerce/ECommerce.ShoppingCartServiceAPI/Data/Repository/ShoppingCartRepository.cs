@@ -18,14 +18,14 @@ public class ShoppingCartRepository : IShoppingCartRepository
 
     public void Dispose() => _context.Dispose();
 
-    private async Task<bool> CommitInDbAsync() => await _context.SaveChangesAsync() > 0;
+    private async Task<bool> CommitForDbAsync() => await _context.SaveChangesAsync() > 0;
 
     public async Task<ShoppingCartHeader> FindByAsync(int id, Func<IQueryable<ShoppingCartHeader>, IIncludableQueryable<ShoppingCartHeader, object>> include = null, bool asNotracking = false)
     {
         var query = (IQueryable<ShoppingCartHeader>)_dbSet;
 
         if (asNotracking)
-            query = (IQueryable<ShoppingCartHeader>)_dbSet;
+            query = query.AsNoTracking();
 
         if (include != null) 
             query = include(query);
@@ -37,13 +37,13 @@ public class ShoppingCartRepository : IShoppingCartRepository
     {
         await _dbSet.AddAsync(entity);
 
-        return await CommitInDbAsync();
+        return await CommitForDbAsync();
     }
 
     public async Task<bool> UpdateAsync(ShoppingCartHeader entity)
     {
         _context.Entry(entity).State = EntityState.Modified;
 
-        return await CommitInDbAsync();
+        return await CommitForDbAsync();
     }
 }

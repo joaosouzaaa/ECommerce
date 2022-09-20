@@ -3,7 +3,7 @@ using ECommerce.ShoppingCartServiceAPI.Domain.Enum;
 using ECommerce.ShoppingCartServiceAPI.Domain.Extensions;
 using FluentValidation;
 
-namespace ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Validation;
+namespace ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Validation.EntitiesValidation;
 
 public class CardPaymentValidation : Validate<CardPayment>
 {

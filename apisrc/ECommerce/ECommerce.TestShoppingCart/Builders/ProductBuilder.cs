@@ -42,7 +42,7 @@ namespace ECommerce.TestShoppingCart.Builders
                 Name = _name,
                 OtherDetails = _otherDetails,
                 Price = _price,
-                Quantity = _quantity
+                Amount = _quantity
             };
         }
 

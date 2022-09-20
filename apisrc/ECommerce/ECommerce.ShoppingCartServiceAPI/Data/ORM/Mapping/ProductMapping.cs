@@ -4,15 +4,14 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ECommerce.ShoppingCartServiceAPI.Data.ORM.Mapping;
 
-public class ProductMapping : IEntityTypeConfiguration<Product>
+public class ProductMapping : BaseMapping, IEntityTypeConfiguration<Product>
 {
     public void Configure(EntityTypeBuilder<Product> builder)
     {
-        builder.ToTable(nameof(Product));
+        builder.ToTable("Product", Schema);
         builder.HasKey(p => p.Id);
 
         builder.Property(p => p.ProductTypeId).HasColumnName("ProductType_Id");
-        builder.Property(p => p.ShoppingCartHeaderId).HasColumnName("ShoppingCartHeader_Id");
 
         builder.Property(p => p.Image).HasColumnType("varbinary(max)").IsUnicode()
             .HasColumnName("image").IsRequired();

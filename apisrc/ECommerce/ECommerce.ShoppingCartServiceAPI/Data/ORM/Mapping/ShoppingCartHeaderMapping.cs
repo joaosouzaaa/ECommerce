@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ECommerce.ShoppingCartServiceAPI.Data.ORM.Mapping
 {
-    public class ShoppingCartHeaderMapping : IEntityTypeConfiguration<ShoppingCartHeader>
+    public class ShoppingCartHeaderMapping : BaseMapping, IEntityTypeConfiguration<ShoppingCartHeader>
     {
         public void Configure(EntityTypeBuilder<ShoppingCartHeader> builder)
         {
-            builder.ToTable(nameof(ShoppingCartHeader));
+            builder.ToTable("ShoppingCartHeader", Schema);
             builder.HasKey(sc => sc.Id);
 
             builder.Property(sc => sc.CouponCode).HasColumnType("varchar(11)").IsUnicode()
@@ -38,8 +38,6 @@ namespace ECommerce.ShoppingCartServiceAPI.Data.ORM.Mapping
                     config.HasOne<ShoppingCartHeader>().WithMany().HasForeignKey("ShoppingCartHeader_Id");
                     config.HasOne<Product>().WithMany().HasForeignKey("Product_Id");
                 });
-
-
         }
     }
 }

@@ -21,11 +21,11 @@ namespace ECommerce.TestShoppingCart.UnitTest.Controller
         public async Task SetAsync_ReturnsTrue()
         {
             var shoppingCarSaveRequest = ShoppingCartBuilder.NewObject().SaveRequestBuilder();
-            _service.Setup(s => s.SetAsync(shoppingCarSaveRequest)).Returns(Task.FromResult(true));
+            _service.Setup(s => s.AddProductAsync(shoppingCarSaveRequest)).Returns(Task.FromResult(true));
 
             var controllerResult = await _controller.SetAsync(shoppingCarSaveRequest);
 
-            _service.Verify(s => s.SetAsync(shoppingCarSaveRequest), Times.Once());
+            _service.Verify(s => s.AddProductAsync(shoppingCarSaveRequest), Times.Once());
             Assert.True(controllerResult);
         }
 
@@ -33,11 +33,11 @@ namespace ECommerce.TestShoppingCart.UnitTest.Controller
         public async Task SetAsync_ReturnsFalse()
         {
             var shoppingCarSaveRequest = ShoppingCartBuilder.NewObject().SaveRequestBuilder();
-            _service.Setup(s => s.SetAsync(shoppingCarSaveRequest)).Returns(Task.FromResult(false));
+            _service.Setup(s => s.AddProductAsync(shoppingCarSaveRequest)).Returns(Task.FromResult(false));
 
             var controllerResult = await _controller.SetAsync(shoppingCarSaveRequest);
 
-            _service.Verify(s => s.SetAsync(shoppingCarSaveRequest), Times.Once());
+            _service.Verify(s => s.AddProductAsync(shoppingCarSaveRequest), Times.Once());
             Assert.False(controllerResult);
         }
 

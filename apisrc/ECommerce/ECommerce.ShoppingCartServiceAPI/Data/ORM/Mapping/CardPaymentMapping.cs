@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ECommerce.ShoppingCartServiceAPI.Data.ORM.Mapping
 {
-    public class CardPaymentMapping : IEntityTypeConfiguration<CardPayment>
+    public class CardPaymentMapping : BaseMapping,  IEntityTypeConfiguration<CardPayment>
     {
         public void Configure(EntityTypeBuilder<CardPayment> builder)
         {
-            builder.ToTable(nameof(CardPayment));
+            builder.ToTable("CardPayment", Schema);
             builder.HasKey(c => c.Id);
 
             builder.Property(c => c.ShoppingCartHeaderId).HasColumnName("ShoppingCartHeader_Id");

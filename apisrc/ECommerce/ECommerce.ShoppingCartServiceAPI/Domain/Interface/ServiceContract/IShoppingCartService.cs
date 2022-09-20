@@ -5,9 +5,10 @@ namespace ECommerce.ShoppingCartServiceAPI.Domain.Interface.ServiceContract
 {
     public interface IShoppingCartService
     {
-        Task<bool> SetAsync(ShoppingCartSaveRequest saveRequest);
-        Task<ShoppingCartResponse> GetAsync(string key);
-        Task<bool> RemoveAsync(string key);
-        Task<bool> RefreshAsync(string key);
+        Task<ShoppingCartResponse> GetShoppingCartAsync(int shoppingCartId);
+        Task<bool> FinalizePurchase(FinalizePurchaseRequest finalizePurchaseRequest);
+        Task<bool> AddProductAsync(int shoppingCartId, ProductSaveRequest saveProduct);
+        Task<bool> AddCoupoum(int shoppingCartId, string CouponCode);
+        Task<bool> RemoveProductAsync(int shoppingCartId, ProductSaveRequest removeProduct);
     }
 }

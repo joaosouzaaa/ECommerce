@@ -1,82 +1,136 @@
-﻿//using ECommerce.ShoppingCartServiceAPI.ApplicationService.Request;
-//using ECommerce.ShoppingCartServiceAPI.ApplicationService.Response;
-//using ECommerce.ShoppingCartServiceAPI.ApplicationService.Service.Base;
-//using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
-//using ECommerce.ShoppingCartServiceAPI.Domain.Enum;
-//using ECommerce.ShoppingCartServiceAPI.Domain.Extensions;
-//using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Notification;
-//using ECommerce.ShoppingCartServiceAPI.Domain.Interface;
-//using ECommerce.ShoppingCartServiceAPI.Domain.Interface.RepositoryContract;
-//using ECommerce.ShoppingCartServiceAPI.Domain.Interface.ServiceContract;
-//using ECommerce.ShoppingCartServiceAPI.RabbitMQSender;
+﻿using ECommerce.ShoppingCartServiceAPI.ApplicationService.DTOs.Request.ValueObjectRequest;
+using ECommerce.ShoppingCartServiceAPI.ApplicationService.Request;
+using ECommerce.ShoppingCartServiceAPI.ApplicationService.Request.MessageRequest;
+using ECommerce.ShoppingCartServiceAPI.ApplicationService.Response;
+using ECommerce.ShoppingCartServiceAPI.ApplicationService.Service.Base;
+using ECommerce.ShoppingCartServiceAPI.Domain.Entities;
+using ECommerce.ShoppingCartServiceAPI.Domain.Enum;
+using ECommerce.ShoppingCartServiceAPI.Domain.Extensions;
+using ECommerce.ShoppingCartServiceAPI.Domain.Handlers.Notification;
+using ECommerce.ShoppingCartServiceAPI.Domain.Interface;
+using ECommerce.ShoppingCartServiceAPI.Domain.Interface.RepositoryContract;
+using ECommerce.ShoppingCartServiceAPI.Domain.Interface.ServiceContract;
+using ECommerce.ShoppingCartServiceAPI.RabbitMQSender;
+using Microsoft.EntityFrameworkCore;
 
-//namespace ECommerce.ShoppingCartServiceAPI.ApplicationService.Service;
+namespace ECommerce.ShoppingCartServiceAPI.ApplicationService.Service;
 
-//public class ShoppingCartService : BaseService<ShoppingCartDatail>, IShoppingCartService
-//{
-//    private readonly IShoppingCartRepository _shoppingCartRepository;
-//    private readonly IRabbitMQMessageSender _rabbitMQ;
-//    private const string _queue = "ShoppingCartQueue";
+public class ShoppingCartService : BaseService<ShoppingCartHeader>, IShoppingCartService
+{
+    private readonly IShoppingCartRepository _shoppingCartRepository;
+    private readonly IRabbitMQMessageSender _rabbitMQ;
+    private const string _QUEUE = "ShoppingCartQueue";
 
-//    public ShoppingCartService(IShoppingCartRepository shoppingCartRepository,
-//                               IValidate<ShoppingCartDatail> validate,
-//                               INotificationHandler notification,
-//                               IRabbitMQMessageSender rabbitMQ)
-//            : base(validate, notification)
-//    {
-//        _shoppingCartRepository = shoppingCartRepository;
-//        _rabbitMQ = rabbitMQ;
-//    }
+    public ShoppingCartService(IValidate<ShoppingCartHeader> validate, 
+                               INotificationHandler notification,
+                               IShoppingCartRepository shoppingCartRepository,
+                               IRabbitMQMessageSender rabbitMQMessage) 
+        : base(validate, notification)
+    {
+        _shoppingCartRepository = shoppingCartRepository;
+        _rabbitMQ = rabbitMQMessage;
+    }
 
-//    public async Task<bool> SetAsync(ShoppingCartSaveRequest saveRequest)
-//    {
-//        var shoppingCart = saveRequest.MapTo<ShoppingCartSaveRequest, ShoppingCartDatail>();
-//        shoppingCart.TotalItens = saveRequest.ProductsSaveRequest.Count;
-//        shoppingCart.TotalPrice = 0;
-//        foreach (var product in saveRequest.ProductsSaveRequest)
-//            shoppingCart.TotalPrice += product.Price;
 
-//        if (!await ValidationAsync(shoppingCart))
-//            return false;
+    public async Task<ShoppingCartResponse> GetShoppingCartAsync(int shoppingCartId)
+    {
+        var shoppingCart = await _shoppingCartRepository.FindByAsync(shoppingCartId, i => i
+            .Include(sc => sc.Products));
 
-//        _rabbitMQ.SendMessage(saveRequest, _queue);
-        
-//        await _shoppingCartRepository.SetAsync(shoppingCart);
+        var response = shoppingCart.MapTo<ShoppingCartHeader, ShoppingCartResponse>();
 
-//        return true;
-//    }
+        CalculateProductAndQuantities(shoppingCart, response);
 
-//    public async Task<ShoppingCartResponse> GetAsync(string key)
-//    {
-//        var shoppingCart = await _shoppingCartRepository.GetAsync(key);
+        return response;
+    }
 
-//        if (shoppingCart != null)
-//            return shoppingCart.MapTo<ShoppingCartDatail, ShoppingCartResponse>();
+    public async Task<bool> FinalizePurchase(FinalizePurchaseRequest finalizePurchaseRequest)
+    {
+        var shoppingCart = await _shoppingCartRepository.FindByAsync(finalizePurchaseRequest.ShoppingCartId, i => i
+            .Include(s => s.Products)
+            .Include(s => s.CardPayment)
+            .Include(s => s.Customer));
 
-//        return null;
-//    }
+        shoppingCart.Customer = finalizePurchaseRequest.Customer.MapTo<CustomerVORequest, Customer>();
+        shoppingCart.CardPayment = finalizePurchaseRequest.CardPayment.MapTo<CardPaymentVORequest, CardPayment>();
 
-//    public async Task<bool> RemoveAsync(string key)
-//    {
-//        var getString = await _shoppingCartRepository.GetStringAsync(key);
-//        if (getString != null)
-//        {
-//            await _shoppingCartRepository.RemoveAsync(key);
-//            return true;
-//        }
+        if (!await ValidationAsync(shoppingCart))
+            return false;
 
-//        return _notification.AddNotification(new DomainNotification("ShoppingCart", EMessage.NotFound.Description().FormatTo("Shopping Cart")));
-//    }
+        var CheckoutMessage = shoppingCart.MapTo<ShoppingCartHeader, CheckoutHeaderRequest>();
+         _rabbitMQ.SendMessage(CheckoutMessage, _QUEUE);
 
-//    public async Task<bool> RefreshAsync(string key)
-//    {
-//        var getString = await _shoppingCartRepository.GetStringAsync(key);
-//        if (getString != null)
-//        {
-//            await _shoppingCartRepository.RefreshAsync(key);
-//            return true;
-//        }
+        return await _shoppingCartRepository.UpdateAsync(shoppingCart);
+    }
 
-//        return _notification.AddNotification(new DomainNotification("ShoppingCart", EMessage.NotFound.Description().FormatTo("Shopping Cart")));
-//    }
-//}
+    public async Task<bool> AddCoupoum(int shoppingCartId, string CouponCode)
+    {
+        var shoppingCart = await _shoppingCartRepository.FindByAsync(shoppingCartId, i => i
+             .Include(sc => sc.Products));
+
+        shoppingCart.CouponCode = CouponCode;
+
+        if (!await ValidationAsync(shoppingCart))
+            return false;
+
+        return await _shoppingCartRepository.UpdateAsync(shoppingCart);
+    }
+
+    public async Task<bool> AddProductAsync(int shoppingCartId, ProductSaveRequest saveProduct)
+    {
+        var shoppingCart = await _shoppingCartRepository.FindByAsync(shoppingCartId, i => i
+            .Include(sc => sc.Products));
+
+        if (shoppingCart == null)
+            return _notification.AddNotification(new DomainNotification("ShoppingCart", EMessage.NotFound.Description().FormatTo("Carrinho de Compras")));
+
+        if (IncreaseProductQuantity(saveProduct, shoppingCart))
+            return await _shoppingCartRepository.UpdateAsync(shoppingCart);
+        else
+        {
+            var product = saveProduct.MapTo<ProductSaveRequest, Product>();
+            shoppingCart.Products.Add(product);
+
+            return await _shoppingCartRepository.UpdateAsync(shoppingCart);
+        }
+    }
+
+    public async Task<bool> RemoveProductAsync(int shoppingCartId, ProductSaveRequest productRequest)
+    {
+        var shoppingCart = await _shoppingCartRepository.FindByAsync(shoppingCartId, i => i
+            .Include(sc => sc.Products));
+
+        if (shoppingCart.Products.Any(p => p.Id == productRequest.ProductId))
+        {
+            var product = productRequest.MapTo<ProductSaveRequest, Product>();
+            shoppingCart.Products.Remove(product);
+
+            return await _shoppingCartRepository.UpdateAsync(shoppingCart);
+        }
+
+        return false;
+    }
+
+    private void CalculateProductAndQuantities(ShoppingCartHeader shoppingCart, ShoppingCartResponse response)
+    {
+        response.TotalItens = shoppingCart.Products.Count();
+
+        foreach (var product in shoppingCart.Products)
+        {
+            response.TotalPrice += product.Price;
+        }
+    }
+
+    private bool IncreaseProductQuantity(ProductSaveRequest saveProduct, ShoppingCartHeader shoppingCart)
+    {
+        if (shoppingCart.Products.Any(p => p.Id == saveProduct.ProductId))
+        {
+            var product = shoppingCart.Products.Find(p => p.Id == saveProduct.ProductId);
+            product.Amount += saveProduct.Amount;
+
+            return true;
+        }
+
+        return false;
+    }
+}

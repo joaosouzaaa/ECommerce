@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ECommerce.OrderServiceAPI.Data.ORM.Mappings;
 
-public class OrderDetailMapping : IEntityTypeConfiguration<OrderDetail>
+public class ProductMapping : IEntityTypeConfiguration<Product>
 {
-    public void Configure(EntityTypeBuilder<OrderDetail> builder)
+    public void Configure(EntityTypeBuilder<Product> builder)
     {
-        builder.ToTable(nameof(OrderDetailMapping));
+        builder.ToTable(nameof(ProductMapping));
         builder.HasKey(o => o.Id);
 
         builder.Property(o => o.OrderHeaderId).HasColumnName("order_header_id");
@@ -20,7 +20,7 @@ public class OrderDetailMapping : IEntityTypeConfiguration<OrderDetail>
         builder.Property(o => o.Price).HasColumnType("decimal(12, 2)")
             .HasColumnName("price").IsRequired();
 
-        builder.Property(o => o.Quantity).HasColumnName("count").IsRequired();
+        builder.Property(o => o.Amount).HasColumnName("count").IsRequired();
 
         builder.Property(o => o.CreateDate).HasColumnType("datetime2")
             .HasColumnName("create_date").IsRequired();

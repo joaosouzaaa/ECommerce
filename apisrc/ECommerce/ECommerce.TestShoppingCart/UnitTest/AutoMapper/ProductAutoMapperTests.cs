@@ -25,7 +25,7 @@ namespace ECommerce.TestShoppingCart.UnitTest.AutoMapper
             Assert.Equal(productSaveRequest.Name, Product.Name);
             Assert.Equal(productSaveRequest.Description, Product.Description);
             Assert.Equal(productSaveRequest.OtherDetails, Product.OtherDetails);
-            Assert.Equal(productSaveRequest.Quantity, Product.Amount);
+            Assert.Equal(productSaveRequest.Amount, Product.Amount);
             Assert.Equal(productSaveRequest.Price, Product.Price);
         }
 

@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ECommerce.ShoppingCartServiceAPI.Data.ORM.Mapping
 {
-    public class CustomerMapping : IEntityTypeConfiguration<Customer>
+    public class CustomerMapping : BaseMapping, IEntityTypeConfiguration<Customer>
     {
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
-            builder.ToTable(nameof(Customer));
+            builder.ToTable("Customer", Schema);
             builder.HasKey(c => c.Id);
 
             builder.Property(c => c.UserId).HasColumnName("User_Id");

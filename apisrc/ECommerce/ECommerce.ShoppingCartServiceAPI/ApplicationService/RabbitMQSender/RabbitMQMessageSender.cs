@@ -1,5 +1,5 @@
 ﻿using ECommerce.MessageBus.Entities;
-using ECommerce.ShoppingCartServiceAPI.ApplicationService.Request;
+using ECommerce.ShoppingCartServiceAPI.ApplicationService.Request.MessageRequest;
 using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
@@ -41,7 +41,7 @@ public class RabbitMQMessageSender : IRabbitMQMessageSender
     private byte[] GetMessageAsByteArray(BaseMessage message)
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
-        var json = JsonSerializer.Serialize<AntigoCheckoutHeaderRequest>((AntigoCheckoutHeaderRequest)message, options);
+        var json = JsonSerializer.Serialize<CheckoutHeaderRequest>((CheckoutHeaderRequest)message, options);
 
         return Encoding.UTF8.GetBytes(json);
     }

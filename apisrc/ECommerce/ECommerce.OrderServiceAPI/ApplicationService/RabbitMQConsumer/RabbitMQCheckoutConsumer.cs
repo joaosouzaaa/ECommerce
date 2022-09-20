@@ -63,7 +63,7 @@ public class RabbitMQCheckoutConsumer : BackgroundService
             PurchaseAmount = dto.PurchaseAmount,
             DiscountAmount = dto.DiscountAmount,
             PaymentStatus = dto.PaymentStatus,
-            OrderDetails = new List<OrderDetail>(),
+            OrderDetails = new List<Product>(),
             CartTotalItens = dto.CartTotalItens,
             Customer = new CustomerVO
             {
@@ -84,11 +84,11 @@ public class RabbitMQCheckoutConsumer : BackgroundService
 
         foreach (var datails in dto.CartDatail)
         {
-            var orderDatail = new OrderDetail
+            var orderDatail = new Product
             {
                 ProductId = datails.Product.ProductId,
                 ProductName = datails.Product.Name,
-                Quantity = datails.Product.Quantity,
+                Amount = datails.Product.Quantity,
                 Price = datails.Product.Price,
             };
             order.OrderDetails.Add(orderDatail);

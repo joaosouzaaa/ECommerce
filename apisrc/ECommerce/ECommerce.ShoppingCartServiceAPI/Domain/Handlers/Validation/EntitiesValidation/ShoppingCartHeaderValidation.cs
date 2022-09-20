@@ -21,7 +21,7 @@ public class ShoppingCartHeaderValidation : Validate<ShoppingCartHeader>
 
         When(sc => string.IsNullOrWhiteSpace(sc.CouponCode), () =>
         {
-            RuleFor(p => p.CouponCode).Length(11).Must(p => !p.All(p => char.IsWhiteSpace(p)))
+            RuleFor(p => p.CouponCode).NotEmpty().Length(11)
                 .WithMessage(p => string.IsNullOrWhiteSpace(p.CouponCode)
                 ? EMessage.Required.Description().FormatTo("CouponCode")
                 : EMessage.MoreExpected.Description().FormatTo("CouponCode", "{MaxLength}"));
